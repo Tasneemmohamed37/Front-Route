@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+
+<body style="background-color: rgb(143, 138, 138);">
+    <form>
+        <fieldset>
+            <legend style="background-color: rgb(89, 139, 172);">
+                Personal Data
+            </legend>
+
+            <!-- ===================== [start name data] ==================== -->
+            <fieldset style="background-color: rgb(158, 200, 185);">
+                <legend style="background-color:  rgb(89, 139, 172); height: 60px;">
+                    <br />
+                    Your Name
+                    <br />
+                </legend>
+                <br /><br />
+                <table>
+                    <tr>
+                        <td>
+                            <label for="fname">First Name</label>
+                        </td>
+                        <td>:</td>
+                        <td>
+                            <input type="text" id="fname" name="fname" placeholder="enter your first name" required />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="lname">Last Name</label>
+                        </td>
+                        <td>:</td>
+                        <td>
+                            <input type="text" id="lname" name="lname" placeholder="enter your last name" required/>
+                        </td>
+                    </tr>
+                </table>
+                <br />
+            </fieldset>
+            <br /><br /><br />
+            <!-- ===================== [end name data] ==================== -->
+
+
+            <!-- ===================== [start contact data & password] ==================== -->
+            <table>
+                <tr>
+                    <td>
+                        <label for="phone">Your Phone</label>
+                    </td>
+                    <td>:</td>
+                    <td>
+                        <input type="tel" maxlength="11" minlength="11" id="phone" name="phone" placeholder="phone must be 11 digit"required/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="email">Email</label>
+                    </td>
+                    <td>:</td>
+                    <td>
+                        <input type="email" id="email" name="email" placeholder="enter your email" required/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="password">Password</label>
+                    </td>
+                    <td>:</td>
+                    <td>
+                        <input type="password" id="password" name="password" placeholder="enter password" required/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="repassword">Re-Password</label>
+                    </td>
+                    <td>:</td>
+                    <td>
+                        <input type="password" id="repassword"  placeholder="confirm password" required/>
+                    </td>
+                </tr>
+            </table>
+            <br /><br /><br />
+            <!-- ===================== [end contact data & password] ==================== -->
+
+
+            <!-- ===================== [start gender] ==================== -->
+            <input type="radio" id="male" name="gender" value="male" checked/>
+            <label for="male">Male</label>
+            <br />
+            <input type="radio" id="female" name="gender" value="female" />
+            <label for="female">Female</label>
+            <br /><br /><br />
+            <!-- ===================== [end gender] ==================== -->
+
+            
+            <!-- ===================== [start education] ==================== -->
+            <input type="checkbox" id="student" name="edu" value="student" checked/>
+            <label for="student">Student</label>
+            <br />
+            <input type="checkbox" id="graduated" name="edu" value="graduated" />
+            <label for="graduated">Graduated</label>
+            <br /><br /> <br />
+            <!-- ===================== [end education] ==================== -->
+            
+
+            <!-- ===================== [start faculty drop down list] ==================== -->
+            <select name="faculty" style="width: 200px;">
+                <option  selected disabled>-- Select Faculty --</option>
+                <optgroup label="Group 1">
+                    <option value="auc">AUC</option>
+                </optgroup>
+                <optgroup label="Group 2">
+                    <option value="fci">FCI</option>
+                    <option value="buc">BUC</option>
+                </optgroup>
+                <optgroup label="Group 3">
+                    <option value="dum">DUM</option>
+                    <option value="bue">BUE</option>
+                    <option value="buc">BUC</option>
+                </optgroup>
+            </select><br>
+            <!-- ===================== [end faculty drop down list] ==================== -->
+
+
+            <button type="submit" style="width: 10%;"><img src="submit.jpg" alt="submit img jpg"
+                    width="100%" /></button>
+
+        </fieldset>
+    </form>
+</body>
+
+</html>
