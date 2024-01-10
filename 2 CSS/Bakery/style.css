@@ -1,0 +1,81 @@
+body {
+    margin: 0;
+}
+
+ul {
+    margin: 0;
+    list-style-type: none;
+    position: -webkit-sticky;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    color: white;
+    display: block;
+    padding: 18px;
+    text-decoration: none;
+
+}
+
+li a:hover {
+    color: #8e7754;
+}
+
+.active {
+    border-top: solid 4px #8e7754;
+}
+
+.clear {
+    clear: both;
+}
+
+.home {
+    height: 120vh;
+    text-align: center;
+    color: white;
+    background-image: url("./images/home_bg.jpg");
+    background-position: center center;
+    background-size: cover;
+}
+
+
+.home_text {
+    padding-block: 70px ;
+}
+
+h1 {
+    font-size: 34px;
+}
+
+p {
+    font-size: 20px;
+}
+
+button {
+    width: 120px;
+    height: 50px;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: white;
+    color: #000 ;
+}
+
+button a {
+    color: white;
+    text-decoration: none;
+}
+
+.btn_more {
+    border-style: none;
+    background-color: #8e7754;
+}
+
+.btn_contact {
+    border: 2px solid white;
+    background-color: transparent;
+}
