@@ -1,81 +1,149 @@
-body {
+body{
     margin: 0;
 }
 
-ul {
-    margin: 0;
-    list-style-type: none;
-    position: -webkit-sticky;
+
+.home{
+    min-height: 140vh;
+    background-image: url(./images/home_bg.jpg);
+    background-position: center;
+    background-size: cover;
+    color: white;
 }
 
-li {
+/* ----------- Start Nav bar ------------------ */
+
+.nav-bar{
+    padding: 20px 40px;
+}
+
+.nav-bar .logo img{
+    width: 180px;
     float: left;
 }
 
-li a {
-    color: white;
-    display: inline-block;  /* to can give padding  */
-    padding: 18px;
-    text-decoration: none;
-
+.nav-bar .links li{
+    display: inline-block;
+    list-style-type: none;
 }
 
-li a:hover {
+.nav-bar .links ul {
+    float: right;
+}
+
+.nav-bar .links ul li :hover{
     color: #8e7754;
 }
 
-.active {
-    border-top: solid 4px #8e7754;
+.nav-bar .active{
+    border-top: #8e7754 solid 4px;
+}
+.nav-bar .links a {
+    padding: 30px 10px;
+    text-decoration: none;
+    color: white;
 }
 
-.clear {
+.clear-fix{
     clear: both;
 }
 
-.home {
-    height: 120vh;
+/* ----------- End Nav bar ------------------ */
+
+
+/* ----------- Start home content ------------------ */
+
+.home .home-content{
     text-align: center;
-    color: white;
-    background-image: url("./images/home_bg.jpg");
-    background-position: center center;
-    background-size: cover;
+    font-family:  Geneva, Verdana, sans-serif;
+    padding-top: 20vh;
 }
 
-
-.home_text {
-    padding-block: 70px ;
+.home h1{
+    font-size: 32px;
 }
 
-h1 {
-    font-size: 34px;
+.home p{
+    font-size: 22px;
 }
 
-p {
-    font-size: 20px;
+.home button{
+    padding: 10px 20px;
 }
 
-button {
-    width: 120px;
-    height: 50px;
-    border-radius: 4px;
-}
-
-button:hover {
+.home button:hover,
+.home button a:hover{
+    color: black;
     background-color: white;
-    color: #000 ;
 }
 
-button a {
-    color: white;
+
+.home button a{
     text-decoration: none;
+    color: white;
 }
 
-.btn_more {
-    border-style: none;
+.home .btn-more{
     background-color: #8e7754;
+    border: none;
 }
 
-.btn_contact {
-    border: 2px solid white;
+.home .btn-contact{
     background-color: transparent;
+    border: white solid 1px;
 }
+
+/* ----------- End home content ------------------ */
+
+
+
+/* ----------- Start How we are ------------------ */
+.who-we-are .img,
+.who-we-are .who-content,
+.location .img,
+.location .content{
+    box-sizing: border-box;
+    padding: 90px 60px;
+    width: 50%;
+    float: left;
+}
+
+
+
+.who-we-are .img img,
+.location  img{
+    width: 100%;
+}
+
+.who-we-are ul li {
+    list-style: none;
+    padding: 15px;
+}
+
+.who-we-are .who-content img{
+    width: 34px;
+    height: 34px;
+    border: solid #8e775469 1px;
+    border-radius: 50%;
+    margin: 5px;
+    vertical-align: middle;
+}
+
+
+
+.who-we-are .who-content{
+    color: #686868;
+}
+
+.who-we-are .who-content h2{
+    color: #303030;
+}
+
+.who-we-are p{
+    line-height: 2 ;
+}
+
+
+
+
+
