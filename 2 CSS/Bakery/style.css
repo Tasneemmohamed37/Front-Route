@@ -14,7 +14,7 @@ li {
 
 li a {
     color: white;
-    display: block;
+    display: inline-block;  /* to can give padding  */
     padding: 18px;
     text-decoration: none;
 
