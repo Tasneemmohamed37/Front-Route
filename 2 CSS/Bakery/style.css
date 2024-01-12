@@ -1,9 +1,9 @@
-body{
+body {
     margin: 0;
 }
 
 
-.home{
+.home {
     min-height: 140vh;
     background-image: url(./images/home_bg.jpg);
     background-position: center;
@@ -13,16 +13,16 @@ body{
 
 /* ----------- Start Nav bar ------------------ */
 
-.nav-bar{
+.nav-bar {
     padding: 20px 40px;
 }
 
-.nav-bar .logo img{
+.nav-bar .logo img {
     width: 180px;
     float: left;
 }
 
-.nav-bar .links li{
+.nav-bar .links li {
     display: inline-block;
     list-style-type: none;
 }
@@ -31,20 +31,21 @@ body{
     float: right;
 }
 
-.nav-bar .links ul li :hover{
+.nav-bar .links ul li :hover {
     color: #8e7754;
 }
 
-.nav-bar .active{
+.nav-bar .active {
     border-top: #8e7754 solid 4px;
 }
+
 .nav-bar .links a {
     padding: 30px 10px;
     text-decoration: none;
     color: white;
 }
 
-.clear-fix{
+.clear-fix {
     clear: both;
 }
 
@@ -53,42 +54,42 @@ body{
 
 /* ----------- Start home content ------------------ */
 
-.home .home-content{
+.home .home-content {
     text-align: center;
-    font-family:  Geneva, Verdana, sans-serif;
+    font-family: Geneva, Verdana, sans-serif;
     padding-top: 20vh;
 }
 
-.home h1{
+.home h1 {
     font-size: 32px;
 }
 
-.home p{
+.home p {
     font-size: 22px;
 }
 
-.home button{
+.home button {
     padding: 10px 20px;
 }
 
 .home button:hover,
-.home button a:hover{
+.home button a:hover {
     color: black;
     background-color: white;
 }
 
 
-.home button a{
+.home button a {
     text-decoration: none;
     color: white;
 }
 
-.home .btn-more{
+.home .btn-more {
     background-color: #8e7754;
     border: none;
 }
 
-.home .btn-contact{
+.home .btn-contact {
     background-color: transparent;
     border: white solid 1px;
 }
@@ -99,9 +100,7 @@ body{
 
 /* ----------- Start How we are ------------------ */
 .who-we-are .img,
-.who-we-are .who-content,
-.location .img,
-.location .content{
+.who-we-are .who-content {
     box-sizing: border-box;
     padding: 90px 60px;
     width: 50%;
@@ -110,8 +109,7 @@ body{
 
 
 
-.who-we-are .img img,
-.location  img{
+.who-we-are .img img {
     width: 100%;
 }
 
@@ -120,7 +118,7 @@ body{
     padding: 15px;
 }
 
-.who-we-are .who-content img{
+.who-we-are .who-content img {
     width: 34px;
     height: 34px;
     border: solid #8e775469 1px;
@@ -131,19 +129,156 @@ body{
 
 
 
-.who-we-are .who-content{
+.who-we-are .who-content {
     color: #686868;
 }
 
-.who-we-are .who-content h2{
+.who-we-are .who-content h2 {
     color: #303030;
 }
 
-.who-we-are p{
-    line-height: 2 ;
+.who-we-are p {
+    line-height: 2;
+}
+
+/* ----------- End How we are ------------------ */
+
+
+/* ----------- Start Location ------------------ */
+.location {
+    margin: 10px;
+    background-color: #f8f8f8;
+}
+
+.location .img,
+.location .content {
+    box-sizing: border-box;
+    padding-inline: 50px;
+    width: 50%;
+    float: left;
+}
+
+.location .img{
+    padding-block: 60px;
+}
+
+.location .content {
+    padding-top: 140px ;
+}
+
+.location img {
+    width: 100%;
+}
+
+.location p {
+    line-height: 1.5;
+    color: #686868;
+}
+
+/* ----------- End Location ------------------ */
+
+/* --------------- Start baking ----------------------- */
+
+.baking{
+    padding : 40px;
+    text-align: center;
+}
+
+.baking .text{
+    padding: 20px;
+}
+
+.baking .card{
+    width: 30%;
+    float: left;
+    padding: 20px ;
+    box-sizing: content-box;
+}
+
+.baking .card img{
+    width: 100%;
+}
+
+.baking p{
+    line-height: 1.5;
+    color: #686868;   
+}
+
+/* --------------- End baking ----------------------- */
+
+
+/* --------------- Start Contact info ----------------------- */
+.contact-info {
+    margin: 10px;
+    background-color: #f8f8f8;
+}
+
+.contact-info .content,
+.contact-info .map{
+    box-sizing: border-box;
+    padding: 60px ;
+    width: 50%;
+    float: left;
+}
+
+.contact-info ul{
+    padding: 0;
+    margin: 0;
+}
+
+.contact-info li{
+    list-style-type: none;
+    padding : 10px  10px 10px 0px;
+}
+
+.contact-info .content ul img{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #8e7754;
+    vertical-align:middle;
+}
+
+.contact-info p , 
+.contact-info span{
+    line-height: 1.5;
+    color: #686868;  
+}
+/* --------------- End Contact info ----------------------- */
+
+
+
+/* --------------- Start Footer ----------------------- */
+
+
+.footer{
+    background-color: #403d38;
+}
+
+.footer-button {
+    margin: auto;
+    text-align: center;
+    padding: 50px;
+}
+
+.footer-button .img img{
+    width: 300px;
+}
+
+.footer-button li{
+    float: left;
+    list-style-type: none;
 }
 
 
 
+.footer-button li img{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #484540;
+    padding: 5px;
+    margin: 5px;
+}
 
-
+/* --------------- End Footer ----------------------- */
