@@ -2,6 +2,7 @@
 
 * {
     box-sizing: border-box;
+    font-family: sans-serif;
 }
 
 body {
@@ -446,9 +447,169 @@ body {
 /*?-------------------- [End Counts] ---------------------------------   */
 
 /*&-------------------- [Start Feedback]-------------------------------  */
+.feedback{
+    min-height: 90vh;
+    margin-block: 20px;
+    padding: 40px;
+}
+
+.feedback h2 {
+    text-align: center;
+    font-size: 40px;
+    position: relative;
+}
+
+.feedback h2::after {
+    content: "";
+    position: absolute;
+    background-color: #ff305b;
+    width: 150px;
+    height: 1px;
+    top: 158%;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.feedback h2::before {
+    content: "";
+    position: absolute;
+    border: 1px solid #ff305b;
+    border-left: transparent;
+    border-right: transparent;
+    width: 50px;
+    height: 10px;
+    top: calc(150% - 2px);
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.feedback .card{
+    width: 60%;
+    height: 40vh;
+    margin-inline: auto;
+    background-color: #f1f1f1;
+    position: relative;
+    top: 30px;
+    overflow: hidden;
+}
+
+.feedback .card .cubic{
+    width: 200px;
+    height: 250px;
+    background-color: #ff305b;
+    position: absolute;
+    transform: rotate(45deg);
+    top: -105px;
+    left: -75px;
+
+}
+
+.feedback .img img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50px;
+    left: 60px;
+}
+
+.feedback .card .content{
+    width: 70%;
+    position: absolute;
+    top: 15px;
+    right: 50px;
+
+}
+
+.feedback .card .stars{
+    color: #f1c30d;
+}
 /*&-------------------- [End Feedback]-------------------------------  */
 
 /*^----------------------- [Start Our Blog] ----------------------------- */
+.blog{
+    padding: 40px 60px;
+    color: #555555;
+    background-color: #f1f1f1;
+    font-family: sans-serif;
+}
+
+
+.blog h2 {
+    text-align: center;
+    font-size: 40px;
+    position: relative;
+}
+
+.blog h2::after {
+    content: "";
+    position: absolute;
+    background-color: #ff305b;
+    width: 150px;
+    height: 1px;
+    top: 158%;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.blog h2::before {
+    content: "";
+    position: absolute;
+    border: 1px solid #ff305b;
+    border-left: transparent;
+    border-right: transparent;
+    width: 50px;
+    height: 10px;
+    top: calc(150% - 2px);
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.blog h2,
+.blog h3 ,
+.blog a {
+    color: #333333;
+}
+
+.blog .container{
+    width: 90%;
+    margin-inline: auto;
+    margin-top: 80px;
+}
+
+.blog .container .card{
+    width: 30%;
+    margin: 15px;
+    float: left;
+    background-color: white;
+}
+
+.blog .container .card .img img,
+.blog .container .card .img iframe{
+    width: 100%;
+}
+
+.blog .container .card .img iframe{
+    height: 185px;
+}
+
+.blog .container .card .img:hover{
+    cursor: pointer;
+}
+
+.blog .container .card .post-content{
+    padding-block: 20px;
+    padding-inline: 10px;
+}
+
+.blog .container .card a{
+    text-decoration: none;
+}
+
+.blog .container .card a:hover{
+    color: #ff305b;
+}
+
 /*^----------------------- [End Our Blog] ----------------------------- */
 
 /*&-------------------- [Start Contact us]-------------------------------  */
