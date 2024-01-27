@@ -69,3 +69,28 @@
         width: 30%;
     }
 }
+
+/*^#######################################  */
+/*^##############  Contact ########### */
+/*^#######################################  */
+
+@media screen and (min-width : 768px) {
+
+    .contact .details .address,
+    .contact .details .email,
+    .contact .details .phone,
+    .contact .details .opening-hours {
+        width: 49.5%;
+    }
+
+
+    .contact form .input-group{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .contact form .input-group input{
+        width: 49.5%;
+        
+    }
+}
