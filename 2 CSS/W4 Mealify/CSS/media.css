@@ -1,0 +1,71 @@
+/**  #########################################  */
+/**  ############# General ##############  */
+/**  #########################################  */
+@media screen and (min-width : 567px) {
+    .container {
+        width: 90%;
+    }
+}
+
+
+/*!##########################################  */
+/*!############## Navbar ################  */
+/*!##########################################  */
+
+@media screen and (min-width : 1000px) {
+    .navbar .links ul li {
+        display: inline-block;
+    }
+
+    .navbar .icons .menu {
+        display: none;
+    }
+}
+
+/*?#######################################  */
+/*?############## Start Home ########### */
+/*?#######################################  */
+@media screen and (min-width : 1000px) {
+
+    .home .container {
+        flex-wrap: nowrap;
+        min-height: 110vh;
+        align-items: center;
+    }
+
+    .home .content,
+    .home .img {
+        width: 45%;
+    }
+
+}
+
+/*?#######################################  */
+/*?##############  Chefs ########### */
+/*?#######################################  */
+
+@media screen and (min-width : 1000px) {
+    .chefs-cards .card {
+        width: 30%;
+    }
+}
+
+
+/*~#######################################  */
+/*~##############  Gallery ########### */
+/*~#######################################  */
+
+@media screen and (min-width : 1000px) {
+
+    .gallery .photos {
+        margin-block: 10px;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .gallery .photos .col1,
+    .gallery .photos .col2,
+    .gallery .photos .col3 {
+        width: 30%;
+    }
+}

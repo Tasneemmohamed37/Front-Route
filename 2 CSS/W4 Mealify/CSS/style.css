@@ -1,0 +1,496 @@
+/**  ############## Variables #############  */
+:root
+
+/*? [create a variable with global scope] */
+    {
+    /* * ------- Colors ---------- */
+    --color-default: #212529;
+    --color-primary: hsl(0, 84%, 44%);
+    /*? [define colors using the Hue-saturation-lightness model] */
+    --color-secondary: #37373f;
+    --color-tertiary: #7f7f90;
+    --color-light: hsl(0, 0%, 100%);
+    --color-light-grey: #eee;
+
+
+    /* * --------- Fonts --------- */
+    --font-default: "Open Sans", sans-serif;
+    --font-primary: "Amatic SC", sans-serif;
+    --font-secondary: "Inter", sans-serif;
+
+}
+
+/** ######### animation #########  */
+@keyframes shake {
+    0% {
+        transform: translate(1px, 1px) rotate(0deg);
+    }
+
+    10% {
+        transform: translate(-1px, -2px) rotate(-1deg);
+    }
+
+    20% {
+        transform: translate(-3px, 0px) rotate(1deg);
+    }
+
+    30% {
+        transform: translate(3px, 2px) rotate(0deg);
+    }
+
+    40% {
+        transform: translate(1px, -1px) rotate(1deg);
+    }
+
+    50% {
+        transform: translate(-1px, 2px) rotate(-1deg);
+    }
+
+    60% {
+        transform: translate(-3px, 1px) rotate(0deg);
+    }
+
+    70% {
+        transform: translate(3px, 1px) rotate(-1deg);
+    }
+
+    80% {
+        transform: translate(-1px, -1px) rotate(1deg);
+    }
+
+    90% {
+        transform: translate(1px, 2px) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(1px, -2px) rotate(-1deg);
+    }
+}
+
+/**  #########################################  */
+/**  ############# General ##############  */
+/**  #########################################  */
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 50px;
+    /*????*/
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a,
+span {
+    display: inline-block;
+}
+
+img {
+    display: block;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    width: 95%;
+    margin-inline: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-secondary);
+    margin-block: 0;
+}
+
+.navbar .icons .light {
+    display: none;
+}
+
+::selection {
+    background-color: hsl(0, 84%, 44%, .7);
+    opacity: 0.2;
+    color: var(--color-light);
+}
+
+
+.section-bg {
+    background-color: var(--color-light-grey);
+}
+
+.title {
+    text-align: center;
+    margin-block: 25px;
+    padding-top: 50px;
+}
+
+.title h2 {
+    color: var(--color-tertiary);
+    font-weight: 400;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.title p {
+    font-size: 50px;
+    font-family: var(--font-primary);
+    margin: 10px;
+}
+
+.title span {
+    color: var(--color-primary);
+}
+
+/*!##########################################  */
+/*!############## Navbar ################  */
+/*!##########################################  */
+
+.navbar {
+    background-color: #fff;
+    color: #212529;
+    width: 100%;
+    position: fixed;
+    z-index: 99;
+    padding-block: 15px;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.navbar .logo {
+    font-weight: bold;
+    font-family: var(--font-default);
+    position: relative;
+}
+
+.navbar .logo::after {
+    content: "";
+    background-color: var(--color-primary);
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    position: absolute;
+    right: -3px;
+    bottom: 16px;
+}
+
+.navbar .links ul {
+    display: flex;
+    color: var(--color-tertiary);
+    font-weight: 600;
+}
+
+.navbar .links ul li {
+    display: none;
+}
+
+.navbar .links li {
+    padding: 10px;
+    font-size: 16px;
+}
+
+.navbar .icons i {
+    padding: 10px;
+    font-size: 24px;
+    margin-inline: 10px;
+    cursor: pointer;
+}
+
+.navbar .links a {
+    position: relative;
+}
+
+
+.navbar .links a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-primary);
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.navbar .links a[href="#home"],
+.navbar .links a:target,
+.navbar .links a:hover {
+    /*? [ :target selector highlight the current active HTML anchor.] */
+    color: var(--color-default);
+}
+
+
+.navbar .links a[href="#home"]::after,
+.navbar .links a:target::after,
+.navbar .links a:hover::after {
+    width: 35px;
+}
+
+:root:has(.mode:checked) body,
+:root:has(.mode:checked) .navbar,
+:root:has(.mode:checked) .section-bg {
+    background-color: var(--color-default);
+    color: var(--color-light) !important;
+}
+
+:root:has(.mode:checked) .icons .dark {
+    display: none;
+}
+
+:root:has(.mode:checked) .icons .light {
+    display: inline-block;
+}
+
+/*?#######################################  */
+/*?##############  Home ########### */
+/*?#######################################  */
+
+
+.home .container {
+    min-height: 180vh;
+    display: flex;
+    flex-wrap: wrap-reverse;
+    justify-content: space-evenly;
+    align-content: space-evenly;
+}
+
+.home .content,
+.home .img {
+    width: 90%;
+}
+
+.home .content h2 {
+    color: var(--color-default);
+    font-size: 54px;
+    font-family: var(--font-primary);
+}
+
+.home .content p {
+    margin-block: 20px;
+    line-height: 1.6;
+    font-size: 16px;
+    color: var(--color-secondary);
+}
+
+.home .img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home .img :hover {
+    animation: shake 1s infinite;
+}
+
+.home .img img {
+    width: 85%;
+    filter: drop-shadow(4px 4px 9px #000a);
+
+}
+
+.home .buttons {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.home .buttons .book-btn {
+    background-color: var(--color-primary);
+    color: var(--color-light-grey);
+    padding: 10px 25px;
+    border-radius: 0px 1600px 1600px 1600px;
+}
+
+
+.home .buttons .video-btn {
+    color: var(--color-default);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home .buttons .video-btn .icon {
+    font-size: 24px;
+    background-color: var(--color-light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-right: 20px;
+}
+
+.home .buttons .video-btn .icon i {
+    z-index: 1;
+}
+
+.home .buttons .video-btn .icon::before {
+    content: "";
+    width: 50px;
+    height: 50px;
+    border: 7px solid var(--color-primary);
+    border-color: var(--color-primary) transparent transparent var(--color-primary);
+    border-radius: 50%;
+    background-color: var(--color-light-grey);
+    position: absolute;
+    transform: rotate(-45deg);
+}
+
+/*?#######################################  */
+/*?##############  Chefs ########### */
+/*?#######################################  */
+
+.chefs {
+    margin-block: 50px;
+    text-align: center;
+}
+
+
+.chefs-cards {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 40px;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.chefs-cards .card {
+    width: 80%;
+    border-radius: 2%;
+    box-shadow: 2px 2px 2px 3px rgba(0, 0, 0, 0.144);
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    row-gap: 30px;
+    position: relative;
+    transition-duration: 600ms;
+}
+
+.chefs-cards .card img {
+    width: 100%;
+    border-radius: 2%;
+}
+
+.chefs-cards .card .img {
+    position: relative;
+}
+
+.chefs-cards .card .img::before {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    background-image: url("../Images/team-shape.svg");
+    background-repeat: repeat-x;
+    width: 100%;
+    height: 50px;
+}
+
+.chefs-cards .card p {
+    color: var(--color-tertiary);
+}
+
+.chefs-cards .social-box {
+    background-color: var(--color-light-grey);
+    border-radius: 5px;
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    opacity: 0;
+}
+
+.chefs-cards .social-box i {
+    font-size: 24px;
+    padding: 5px;
+}
+
+.chefs-cards .card:hover {
+    scale: 1.07;
+}
+
+.chefs-cards .card:hover .social-box {
+    opacity: 1;
+}
+
+/*~#######################################  */
+/*~##############  Gallery ########### */
+/*~#######################################  */
+
+.gallery{
+    margin-block: 50px;
+}
+
+.gallery .photos{
+    margin-block: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 20px;
+}
+
+.gallery .photos .col1,
+.gallery .photos .col2,
+.gallery .photos .col3{
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    row-gap: 20px;
+}
+
+.gallery .photos img{
+    width: 100%;
+}
+
+.gallery .photos .img {
+    position: relative;
+}
+
+.gallery .photos .layer{
+    width: 100%;
+    height: 90%;
+    background-color: #00000096;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    opacity: 0;
+    transition: top 400ms;
+}
+
+.gallery .photos .layer:hover{
+    opacity: 1;
+}
