@@ -1,0 +1,89 @@
+/*?---------------- [ General ] ------------------- */
+:root {
+    /* ====== Colors ======  */
+    --main-clr: hsl(212, 100%, 50%);
+    --overlay-clr: hsla(212, 100%, 50%, 0.7);
+    --txt-clr: hsl(0, 0%, 31%);
+    --heading-clr: hsl(0, 0%, 12%);
+    --light-blue-clr: hsl(212, 75%, 89%);
+}
+
+body {
+    background-color: #f5f5f5;
+    color: var(--txt-clr);
+}
+
+/* ---------- [ Main Title ] -------- */
+.main-title h2 {
+    font-size: 3rem;
+    color: var(--heading-clr);
+}
+
+.main-title p {
+    position: relative;
+}
+
+.main-title p::after {
+    content: "";
+    width: 35px;
+    height: 5px;
+    background-color: var(--main-clr);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+/* --------- [ Secondary Title ] ------------ */
+.secondary-title h3 {
+    color: var(--heading-clr);
+    position: relative;
+}
+
+.secondary-title h3::after {
+    content: "";
+    width: 100px;
+    height: 4px;
+    position: absolute;
+    left: 0;
+    bottom: 35px;
+    background-color: var(--main-clr);
+}
+/*?---------------- [ General ] ------------------- */
+
+
+
+/*!---------- [ Start Navbar] --------------- */
+ul.navbar-nav li a{
+    position: relative;
+}
+
+ul.navbar-nav li a::before{
+    content: "";
+    width: 0;
+    height: 2px;
+    position: absolute;
+    background-color: var(--light-blue-clr);
+    bottom: 0;
+    transition: width 300ms;
+}
+
+ul.navbar-nav li a:hover:before{
+    width: 50%;
+}
+/*!---------- [ End Navbar] --------------- */
+
+
+/*?----------- [ Start Header ] ----------- */
+.home {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url(../Images/hero-bg.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.home h1{
+    font-size: 3rem;
+}
+/*?----------- [ End Header ] ----------- */
+
+
