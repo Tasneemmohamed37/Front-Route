@@ -86,4 +86,14 @@ ul.navbar-nav li a:hover:before{
 }
 /*?----------- [ End Header ] ----------- */
 
+/* ^------------ [ Start About ] ----------- */
 
+.about{
+    box-shadow: 3px 2px 8px 4px #888888 ;
+}
+
+.about .image{
+    max-width: 200px;
+}
+
+/* ^------------ [ End About ] ----------- */
