@@ -142,7 +142,7 @@ ul.navbar-nav li a:hover:before {
     background-image: linear-gradient(rgba(8, 51, 241, 0.8), rgba(14, 103, 206, 0.8)) ,url(../Images/counters-bg.jpg);
     background-position: center;
     background-size: cover;
-    background-attachment: scroll;
+    background-attachment: fixed;
     min-height: 60vh;
 }
 .counts .icon{
@@ -152,3 +152,50 @@ ul.navbar-nav li a:hover:before {
     border: solid 5px var(--light-blue-clr);
 }
 /*&----------- [End Counts ] ------------------  */
+
+/* ~------------ [ Start Work] ---------------- */
+
+
+.work .img{
+    overflow: hidden;
+}
+
+.work .img img{
+    transition: 600ms;
+}
+.work .img:hover img{
+    scale: 1.5;
+}
+
+.work span{
+    color: var(--main-clr);
+}
+
+.work .row .icon{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: solid 3px var(--main-clr);
+    font-size: 22px;
+    color: var(--main-clr);
+}
+
+.overlay{
+    min-height: 80vh;
+    background-image: linear-gradient(rgba(8, 51, 241, 0.8), rgba(14, 103, 206, 0.8)) ,url(../Images/overlay-bg.jpg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.overlay .carousel-item img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.overlay .carousel-indicators button{
+    width: 10px;
+    height: 10px;
+}
+/* ~------------ [ End Work] ---------------- */
