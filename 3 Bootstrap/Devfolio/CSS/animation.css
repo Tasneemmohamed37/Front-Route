@@ -10,15 +10,15 @@
 }
 
 .home p span:nth-of-type(1){
-    animation: developer 6s infinite steps(9);
+    animation: developer 10s infinite steps(9);
 }
 
 .home p span:nth-of-type(2){
-    animation: designer 6s infinite steps(8);
+    animation: designer 10s infinite steps(8);
 }
 
 .home p span:nth-of-type(3){
-    animation: photographer 6s infinite steps(12);
+    animation: photographer 10s infinite steps(12);
 }
 
 @keyframes developer{

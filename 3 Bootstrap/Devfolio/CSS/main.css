@@ -1,4 +1,4 @@
-/*?---------------- [ General ] ------------------- */
+/*?---------------- [ Start General ] ------------------- */
 :root {
     /* ====== Colors ======  */
     --main-clr: hsl(212, 100%, 50%);
@@ -14,6 +14,10 @@ body {
 }
 
 /* ---------- [ Main Title ] -------- */
+.main-title{
+    text-align: center;
+}
+
 .main-title h2 {
     font-size: 3rem;
     color: var(--heading-clr);
@@ -29,7 +33,7 @@ body {
     height: 5px;
     background-color: var(--main-clr);
     position: absolute;
-    bottom: 0;
+    bottom: -25px;
     left: 50%;
     transform: translate(-50%);
 }
@@ -46,19 +50,20 @@ body {
     height: 4px;
     position: absolute;
     left: 0;
-    bottom: 35px;
+    bottom: -3px;
     background-color: var(--main-clr);
 }
-/*?---------------- [ General ] ------------------- */
+
+/*?---------------- [ End General ] ------------------- */
 
 
 
 /*!---------- [ Start Navbar] --------------- */
-ul.navbar-nav li a{
+ul.navbar-nav li a {
     position: relative;
 }
 
-ul.navbar-nav li a::before{
+ul.navbar-nav li a::before {
     content: "";
     width: 0;
     height: 2px;
@@ -68,9 +73,10 @@ ul.navbar-nav li a::before{
     transition: width 300ms;
 }
 
-ul.navbar-nav li a:hover:before{
+ul.navbar-nav li a:hover:before {
     width: 50%;
 }
+
 /*!---------- [ End Navbar] --------------- */
 
 
@@ -81,19 +87,68 @@ ul.navbar-nav li a:hover:before{
     background-size: cover;
 }
 
-.home h1{
+.home h1 {
     font-size: 3rem;
 }
+
 /*?----------- [ End Header ] ----------- */
+
 
 /* ^------------ [ Start About ] ----------- */
 
-.about{
-    box-shadow: 3px 2px 8px 4px #888888 ;
+.about {
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.06), 0 2px 5px 0 rgba(0, 0, 0, 0.2);
 }
 
-.about .image{
+.about .img {
     max-width: 200px;
 }
 
+
+.about .title-left {
+    color: var(--heading-clr);
+}
+
 /* ^------------ [ End About ] ----------- */
+
+/**------------- [ Start Services] ------------*/
+.services .icon{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: var(--main-clr) 8px solid;
+    font-size: 32px;
+    color: var(--heading-clr);
+    transition: 300ms;
+}
+
+.services .icon:hover{
+    border-color: var(--light-blue-clr);
+    background-color: var(--main-clr);
+}
+
+.services .row h3 {
+    text-transform: uppercase;
+    color: var(--heading-clr);
+    font-size: 1.5rem;
+}
+
+/**------------- [ End Services] ------------*/
+
+/*&----------- [Start Counts ] ------------------  */
+
+.counts {
+    color: var(--light-blue-clr);
+    background-image: linear-gradient(rgba(8, 51, 241, 0.8), rgba(14, 103, 206, 0.8)) ,url(../Images/counters-bg.jpg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: scroll;
+    min-height: 60vh;
+}
+.counts .icon{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: solid 5px var(--light-blue-clr);
+}
+/*&----------- [End Counts ] ------------------  */
