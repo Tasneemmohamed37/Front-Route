@@ -14,7 +14,7 @@ body {
 }
 
 /* ---------- [ Main Title ] -------- */
-.main-title{
+.main-title {
     text-align: center;
 }
 
@@ -50,7 +50,7 @@ body {
     height: 4px;
     position: absolute;
     left: 0;
-    bottom: -3px;
+    bottom: -5px;
     background-color: var(--main-clr);
 }
 
@@ -112,7 +112,7 @@ ul.navbar-nav li a:hover:before {
 /* ^------------ [ End About ] ----------- */
 
 /**------------- [ Start Services] ------------*/
-.services .icon{
+.services .icon {
     width: 100px;
     height: 100px;
     border-radius: 50%;
@@ -122,7 +122,7 @@ ul.navbar-nav li a:hover:before {
     transition: 300ms;
 }
 
-.services .icon:hover{
+.services .icon:hover {
     border-color: var(--light-blue-clr);
     background-color: var(--main-clr);
 }
@@ -139,39 +139,40 @@ ul.navbar-nav li a:hover:before {
 
 .counts {
     color: var(--light-blue-clr);
-    background-image: linear-gradient(rgba(8, 51, 241, 0.8), rgba(14, 103, 206, 0.8)) ,url(../Images/counters-bg.jpg);
+    background-image: linear-gradient(rgba(8, 51, 241, 0.8), rgba(14, 103, 206, 0.8)), url(../Images/counters-bg.jpg);
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
     min-height: 60vh;
 }
-.counts .icon{
+
+.counts .icon {
     width: 60px;
     height: 60px;
     border-radius: 50%;
     border: solid 5px var(--light-blue-clr);
 }
+
 /*&----------- [End Counts ] ------------------  */
 
 /* ~------------ [ Start Work] ---------------- */
-
-
-.work .img{
+.work .img {
     overflow: hidden;
 }
 
-.work .img img{
+.work .img img {
     transition: 600ms;
 }
-.work .img:hover img{
+
+.work .img:hover img {
     scale: 1.5;
 }
 
-.work span{
+.work span {
     color: var(--main-clr);
 }
 
-.work .row .icon{
+.work .row .icon {
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -180,22 +181,113 @@ ul.navbar-nav li a:hover:before {
     color: var(--main-clr);
 }
 
-.overlay{
+.overlay {
     min-height: 80vh;
-    background-image: linear-gradient(rgba(8, 51, 241, 0.8), rgba(14, 103, 206, 0.8)) ,url(../Images/overlay-bg.jpg);
+    background-image: linear-gradient(rgba(8, 51, 241, 0.8), rgba(14, 103, 206, 0.8)), url(../Images/overlay-bg.jpg);
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
 }
 
-.overlay .carousel-item img{
+.overlay .carousel-item img {
     width: 150px;
     height: 150px;
     border-radius: 50%;
 }
 
-.overlay .carousel-indicators button{
+.overlay .carousel-indicators button {
     width: 10px;
     height: 10px;
 }
+
 /* ~------------ [ End Work] ---------------- */
+
+/*?------------- [ Start Blog ] ------------------  */
+.blog .card-title,
+.blog .content span {
+    transition: 200ms;
+}
+
+.blog .card-title:hover,
+.blog .content span:hover {
+    color: var(--main-clr);
+}
+
+.blog .card button {
+    background-color: var(--main-clr);
+    color: var(--light-blue-clr);
+    border-radius: 5px;
+    border: none;
+    padding-block: 2px;
+    padding-inline: 10px;
+    width: fit-content;
+    margin-inline: auto;
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateY(50%) translateX(-50%);
+}
+
+/*?------------- [ End Blog ] ------------------  */
+
+/*!------------- [ Start Contact ] -------------------  */
+.contact {
+    background-image: linear-gradient(rgba(8, 51, 241, 0.8), rgba(14, 103, 206, 0.8)), url(../Images/overlay-bg.jpg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.contact .container {
+    margin-top: 20vh;
+}
+
+.contact ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.contact .contacts i {
+    color: var(--overlay-clr);
+    padding-right: 3px;
+    font-size: 14px;
+}
+
+.contact .contacts li {
+    margin-block: 3px;
+}
+
+.contact .social i {
+    font-size: 24px;
+    padding: 10px;
+    margin-right: 5px;
+    border-radius: 50%;
+    border: 3px solid var(--main-clr);
+    color: var(--heading-clr);
+    transition: 300ms;
+}
+
+.contact .social i:hover{
+    color: white;
+    background-color: var(--main-clr);
+    border-color: var(--light-blue-clr);
+}
+
+.contact form button{
+    background-color: var(--main-clr);
+}
+
+.contact form button:hover{
+    background-color: hsl(212, 98%, 61%) !important ;
+}
+
+/* !------------- [ End Contact ] ------------------- */
+
+
+/* ?------------- [ Start Footer ] ------------------- */
+footer {
+    background-color: #014ba0;
+    color: var(--light-blue-clr);
+}
+
+/* ?------------- [ End Footer ] ------------------- */
