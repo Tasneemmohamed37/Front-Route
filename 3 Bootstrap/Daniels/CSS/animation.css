@@ -1,0 +1,52 @@
+.home p{
+    border-right: 2px solid #fff;
+    font-size: 32px;
+}
+
+.home p span{
+    display: inline-block;
+    overflow: hidden;
+    font-family: "Roboto Mono" , monospace;
+}
+
+.home p span:nth-of-type(2){
+    animation: larry 10s infinite steps(13);
+}
+
+.home p span:nth-of-type(3){
+    animation: developer 10s infinite steps(9);
+}
+
+.home p span:nth-of-type(4){
+    animation: designer 10s infinite steps(8);
+}
+
+@keyframes developer{
+    0%, 33%, 66%, 100%{
+        width: 0;
+    }
+
+    16% , 26%{
+        width: calc(22px * 9 );
+    }
+}
+
+@keyframes designer{
+    0%, 33%, 56%, 66%, 100%{
+        width: 0;
+    }
+
+    44% , 54%{
+        width: calc(22px * 8 );
+    }
+}
+
+@keyframes larry{
+    0%, 55%, 100%{
+        width: 0;
+    }
+
+    66% , 76%{
+        width: calc(22px * 12 );
+    }
+}

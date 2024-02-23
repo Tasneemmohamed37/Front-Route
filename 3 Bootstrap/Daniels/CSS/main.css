@@ -1,0 +1,293 @@
+/*?---------------- [ Start General ] ------------------- */
+:root {
+    --txt-clr: hsl(0, 0%, 31%);
+    --heading-clr: hsl(0, 0%, 12%);
+    --bg-clr: #f4f4f4;
+    --white-txt-clr: #fff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Montserrat", sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* ---------- [ Main Title ] -------- */
+.main-title {
+    position: relative;
+}
+
+.main-title h2 {
+    font-size: 3rem;
+    color: var(--heading-clr);
+    font-weight: bold;
+    width: fit-content;
+    position: relative;
+}
+
+.main-title h2::after {
+    position: absolute;
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: var(--heading-clr);
+    bottom: 12px;
+    right: -10px;
+}
+
+.main-title .dots {
+    position: absolute;
+    width: 100%;
+    height: 10%;
+    bottom: 20%;
+    background-image: url(../Images/dots.png);
+}
+
+/*?---------------- [ End General ] ------------------- */
+
+/*?----------------- [ Start Home] -------------------------*/
+.home {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url(../Images/bg.jpg);
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    color: var(--white-txt-clr);
+}
+
+nav a {
+    color: var(--white-txt-clr) !important;
+    padding-inline: 1rem !important;
+}
+
+header {
+    min-height: 100vh;
+}
+
+header li {
+    list-style-type: none;
+    padding-inline: .5rem;
+}
+
+header li a {
+    color: var(--white-txt-clr);
+    font-size: 12px;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.473);
+}
+
+header li a:hover {
+    color: var(--white-txt-clr);
+}
+
+/*?----------------- [ End Home] -------------------------*/
+
+
+/*!------------ [ Start About ] -----------------  */
+.about .doted-bg {
+    background-image: url("../Images/dots.png");
+    background-repeat: repeat;
+    position: absolute;
+    z-index: -9;
+    top: 40px;
+    left: -40px;
+}
+
+.about h2 {
+    font-weight: 800;
+    width: fit-content;
+    position: relative;
+}
+
+.about h2::before {
+    position: absolute;
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: var(--heading-clr);
+    bottom: 6px;
+    right: -10px;
+}
+
+.about p {
+    color: var(--txt-clr);
+}
+
+.about button {
+    border: 1px solid var(--heading-clr);
+}
+
+.about .cv:hover {
+    background-color: transparent !important;
+}
+
+.about .cv:hover a {
+    color: var(--heading-clr) !important;
+}
+
+.about .contact:hover {
+    background-color: var(--heading-clr);
+}
+
+.about .contact:hover a {
+    color: var(--white-txt-clr) !important;
+}
+
+/*!------------ [ End About ] -----------------  */
+
+/* ~------------ [ Start Services ] -------------- */
+.service {
+    background-color: var(--bg-clr);
+}
+
+.service .icon {
+    width: 70px;
+    height: 70px;
+    font-size: 22px;
+    border-radius: 50%;
+    background-color: var(--bg-clr);
+}
+
+.service .icon:hover {
+    background-color: var(--heading-clr);
+    color: var(--bg-clr);
+}
+
+/* ~------------ [ End Services ] -------------- */
+
+/* ^-------------- [ Start Works ] ------------- */
+.works ul button {
+    background-color: transparent;
+    color: var(--heading-clr);
+    font-weight: bold;
+    border: none;
+}
+
+.works ul button .active {
+    color: var(--heading-clr) !important;
+    border-bottom: 1px solid var(--heading-clr);
+}
+
+.works ul button:hover {
+    color: var(--heading-clr);
+}
+
+.works .inner {
+    transition: 300ms;
+}
+
+.works .inner:hover .item-layer {
+    opacity: 1;
+}
+
+.works .item-layer {
+    width: 97%;
+    height: 97%;
+    opacity: 0;
+}
+
+.works .icons i {
+    width: 30px;
+    height: 30px;
+    margin-inline: 2px;
+    border-radius: 50%;
+    background-color: var(--heading-clr);
+    color: var(--white-txt-clr);
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.works .icons i:hover {
+    background-color: var(--white-txt-clr);
+    color: var(--heading-clr);
+    border: 1px solid var(--heading-clr);
+}
+
+/* ^-------------- [ End Works ] ------------- */
+
+/* &------------ [ Start Clients ] ----------------- */
+.clients {
+    background-color: var(--bg-clr);
+}
+
+.carousel-indicators [data-bs-target] {
+    width: 12px;
+    height: 12px;
+}
+
+.carousel-item img {
+    width: 100px;
+}
+
+.carousel-item p {
+    max-width: 900px;
+}
+
+/* &------------ [ End Clients ] ----------------- */
+
+/* *----------- [ Start Statistics] ---------------- */
+.counts h4,
+.counts i {
+    color: var(--heading-clr);
+    font-weight: bold;
+    font-size: 26px;
+}
+
+.counts span {
+    color: var(--txt-clr);
+}
+
+/* *----------- [ End Statistics] ---------------- */
+
+/*?---------- [ Start Team ] ---------------  */
+.team .card-body {
+    background-color: var(--txt-clr);
+}
+
+.team .card {
+    overflow: hidden;
+}
+
+.team .img:hover .overlay {
+    opacity: 1;
+    rotate: 360deg;
+    transition: 400ms;
+}
+
+.team .overlay {
+    width: 97%;
+    height: 97%;
+    opacity: 0;
+}
+
+.team li {
+    list-style-type: none;
+    padding: .5rem;
+}
+
+.team li a {
+    color: var(--white-txt-clr);
+    font-size: 12px;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: var(--heading-clr);
+}
+
+.team li:hover a {
+    background-color: var(--white-txt-clr);
+    color: var(--heading-clr);
+    border: 1px solid var(--heading-clr);
+}
+
+/*?---------- [ End Team ] ---------------  */
