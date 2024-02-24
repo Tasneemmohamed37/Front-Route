@@ -142,6 +142,10 @@ header li a:hover {
     color: var(--white-txt-clr) !important;
 }
 
+.about .progress-bar {
+    box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.15) inset;
+}
+
 /*!------------ [ End About ] -----------------  */
 
 /* ~------------ [ Start Services ] -------------- */
@@ -257,11 +261,22 @@ header li a:hover {
 
 .team .card {
     overflow: hidden;
+    transition: 600ms;
+}
+
+.team .img {
+    overflow: hidden;
+    transition: 600ms;
+}
+
+.team .img:hover img {
+    scale: 1.3;
 }
 
 .team .img:hover .overlay {
     opacity: 1;
     rotate: 360deg;
+    scale: 1;
     transition: 400ms;
 }
 
@@ -269,6 +284,8 @@ header li a:hover {
     width: 97%;
     height: 97%;
     opacity: 0;
+    scale: 0.5;
+    transition: 400ms;
 }
 
 .team li {
@@ -291,3 +308,51 @@ header li a:hover {
 }
 
 /*?---------- [ End Team ] ---------------  */
+
+/* ~----------- [ Start Contact-US ] ------------------ */
+
+.contact .icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--bg-clr);
+    color: var(--heading-clr);
+    font-size: 24px;
+    transition: 400ms;
+}
+
+.contact .inner p {
+    color: var(--txt-clr);
+    text-align: center;
+}
+
+.contact .inner h6 {
+    color: var(--heading-clr);
+    margin-block: 8px;
+    font-weight: bold;
+}
+
+.contact .inner:hover .icon {
+    background-color: var(--heading-clr);
+    color: var(--bg-clr);
+}
+
+.contact form input,
+.contact form textarea {
+    padding: 2px;
+    background-color: var(--bg-clr);
+    border: none;
+}
+
+.contact form input:focus,
+.contact form textarea:focus {
+    outline: none;
+    border: none;
+    box-shadow: none;
+}
+
+.contact form textarea {
+    resize: none;
+}
+
+/* ~----------- [ End Contact-US ] ------------------ */
