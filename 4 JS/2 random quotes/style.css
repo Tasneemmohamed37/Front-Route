@@ -1,0 +1,43 @@
+body {
+    text-align: center;
+    background-color: #A7D397;
+
+}
+
+.content {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: 80px;
+    font-weight: bold;
+    font-family: Impact, sans-serif;
+}
+
+button {
+    color: #555843;
+    background-color: #FBFADA;
+    font-size: 22px;
+    padding: 10px 20px;
+    margin: 20px;
+}
+
+button:hover {
+    box-shadow: 3px 8px 12px #888888;
+}
+
+.txt {
+    margin-block: 20px;
+    font-size: 34px;
+}
+
+.quote {
+    min-height: 20vh;
+    padding-inline: 20px;
+    background-color: #FBFADA;
+    border: 1px solid black;
+}
