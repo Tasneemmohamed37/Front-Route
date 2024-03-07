@@ -166,7 +166,6 @@
 //     case 2 :
 //         console.log('28 / 29 days');
 //         break ;
-    
 // }
 
 

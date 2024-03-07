@@ -1,0 +1,63 @@
+:root{
+  --main-dark-color: #101214;
+  --secondary-dark-color: #161a1d;
+  --tertiary-dark-color: #333;
+}
+
+body {
+  font-family: "Lora", serif;
+  background-color: var(--main-dark-color);
+  color: #f1f1f1;
+}
+
+textarea{
+  resize: none;
+  min-height: 100px !important;
+}
+
+.form-control{
+  background-color: var(--tertiary-dark-color) !important;
+  color: #f1f1f1 ;
+  border: none ;
+  font-family: var(--bs-font-sans-serif);
+}
+
+form label{
+  color: #f1f1f1 !important;
+  font-family: var(--bs-font-sans-serif);
+}
+
+input[type="file"]::placeholder{
+  color: #f1f1f1 ;
+}
+
+form .form-control:focus{
+  border: none;
+  box-shadow: none;
+  color: #f1f1f1;
+  font-weight: 400;
+}
+
+form label {
+  font-family: var(--bs-font-sans-serif);
+  font-weight: 700;
+}
+
+.form-floating > .form-control:not(:placeholder-shown) ~ label::after,
+.form-floating > .form-control:focus ~ label::after {
+  background-color: transparent;
+}
+
+form .form-control::placeholder {
+  color: #f1f1f1;
+}
+
+.inner{
+  background-color: var(--secondary-dark-color);
+  border-radius: 10px;
+}
+
+.inner img{
+  height: 150px;
+  object-fit: contain;
+}

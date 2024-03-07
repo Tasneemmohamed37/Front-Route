@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+
+    <!-- [ fav icon ] -->
+    <link rel="shortcut icon" href="imgs/favicon.png" type="image/x-icon">
+
+    <!-- [ lora font ] -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+        rel="stylesheet" />
+
+    <!-- [ font awesome ] -->
+    <link rel="stylesheet" href="css/all.min.css">
+
+    <!-- [ bootstrap ] -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- [ main style ] -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <main class="py-3">
+        <div class="container">
+            <h1 class="text-center mb-3 h2">Product Management System</h1>
+            <form class="m-auto">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="name" placeholder="name@example.com">
+                    <label for="name">Name</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="category" placeholder="name@example.com"
+                        list="categories">
+                    <label for="category">Category</label>
+                    <datalist id="categories">
+                        <option>Mobile</option>
+                        <option>Laptop</option>
+                        <option>Camera</option>
+                        <option>clothes</option>
+                    </datalist>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="number" class="form-control" id="price" placeholder="name@example.com">
+                    <label for="price">Price</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <textarea class="form-control" id="description" placeholder="name@example.com"></textarea>
+                    <label for="description">Description</label>
+                </div>
+                <div class="mb-3">
+                    <input type="file" class="form-control" id="picUrl" accept="image/*" multiple>
+                </div>
+                <button type="button" class="btn btn-primary mb-3" onclick="addProduct()">Add Product</button>
+            </form>
+            <input type="search" id="" class="form-control w-75 m-auto" placeholder="Search Product....">
+            <div class="row my-5 container" id="productsContainer">
+                
+            </div>
+        </div>
+    </main>
+
+    <!-- [ bootstrap js file] -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <!-- [ main js file] -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
