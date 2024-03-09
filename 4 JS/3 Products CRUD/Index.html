@@ -28,16 +28,25 @@
 <body>
     <main class="py-3">
         <div class="container">
-            <h1 class="text-center mb-3 h2">Product Management System</h1>
+            <h1 class="text-center mb-3 h2" >Product Management System</h1>
             <form class="m-auto">
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="name" placeholder="name@example.com">
+                    <input type="text" oninput="validate(nameInput,nameRegEx)" class="form-control" id="name"
+                        placeholder="name@example.com" required>
                     <label for="name">Name</label>
+                    <div class="error d-none">
+                        Name must start with Capital letter followed by 3 characters or
+                        more
+                    </div>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="category" placeholder="name@example.com"
-                        list="categories">
+                    <input type="text" oninput="validate(categoryInput,categoryRegEx)" class="form-control"
+                        id="category" placeholder="name@example.com" list="categories" required>
                     <label for="category">Category</label>
+                    <div class="error d-none">
+                        Category must start with Capital letter followed by 3 characters
+                        or more
+                    </div>
                     <datalist id="categories">
                         <option>Mobile</option>
                         <option>Laptop</option>
@@ -46,21 +55,36 @@
                     </datalist>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="number" class="form-control" id="price" placeholder="name@example.com">
+                    <input type="number" oninput="validate(priceInput,priceRegEx)" class="form-control" id="price"
+                        placeholder="name@example.com" required>
                     <label for="price">Price</label>
+                    <div class="error d-none">
+                        Price must be greater than 0 and less than 1000$
+                    </div>
                 </div>
                 <div class="form-floating mb-3">
-                    <textarea class="form-control" id="description" placeholder="name@example.com"></textarea>
+                    <textarea oninput="validate(descriptionInput,descriptionRegEx)" class="form-control"
+                        id="description" placeholder="name@example.com" required></textarea>
                     <label for="description">Description</label>
+                    <div class="error d-none">
+                        Description should be at least 10 characters and at most 100
+                        characters
+                    </div>
                 </div>
                 <div class="mb-3">
-                    <input type="file" class="form-control" id="picUrl" accept="image/*" multiple>
+                    <input type="file" class="form-control" id="picUrl" accept="image/*" multiple required>
+                    <div id="imgSrcContainer" class="d-none">
+                        <i class="fa-solid fa-link"></i>
+                        <span id="imgSrc"></span>
+                    </div>
                 </div>
-                <button type="button" class="btn btn-primary mb-3" onclick="addProduct()">Add Product</button>
+                <button type="button" id="add-btn" class="btn btn-primary mb-3" onclick="addProduct()">Add Product</button>
+                <button type="button" id="update-btn" class="btn btn-info ms-3 mb-3 d-none" onclick="updateProduct()">Update Product</button>
             </form>
-            <input type="search" id="" class="form-control w-75 m-auto" placeholder="Search Product....">
+            <input type="search" id="searchInput" oninput="search()" class="form-control w-75 m-auto"
+                placeholder="Search Product....">
             <div class="row my-5 container" id="productsContainer">
-                
+
             </div>
         </div>
     </main>

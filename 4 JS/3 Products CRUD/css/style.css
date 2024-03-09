@@ -1,4 +1,4 @@
-:root{
+:root {
   --main-dark-color: #101214;
   --secondary-dark-color: #161a1d;
   --tertiary-dark-color: #333;
@@ -10,28 +10,30 @@ body {
   color: #f1f1f1;
 }
 
-textarea{
+textarea {
   resize: none;
   min-height: 100px !important;
 }
 
-.form-control{
+.form-control {
   background-color: var(--tertiary-dark-color) !important;
-  color: #f1f1f1 ;
-  border: none ;
+  color: #f1f1f1;
+  border: none;
   font-family: var(--bs-font-sans-serif);
 }
 
-form label{
+form label {
   color: #f1f1f1 !important;
   font-family: var(--bs-font-sans-serif);
 }
 
-input[type="file"]::placeholder{
-  color: #f1f1f1 ;
+input[type="file"]::placeholder,
+input[type="search"]::placeholder {
+  color: #f1f1f1;
 }
 
-form .form-control:focus{
+form .form-control:focus,
+input[type="search"]:focus {
   border: none;
   box-shadow: none;
   color: #f1f1f1;
@@ -43,8 +45,8 @@ form label {
   font-weight: 700;
 }
 
-.form-floating > .form-control:not(:placeholder-shown) ~ label::after,
-.form-floating > .form-control:focus ~ label::after {
+.form-floating>.form-control:not(:placeholder-shown)~label::after,
+.form-floating>.form-control:focus~label::after {
   background-color: transparent;
 }
 
@@ -52,12 +54,22 @@ form .form-control::placeholder {
   color: #f1f1f1;
 }
 
-.inner{
+.inner {
   background-color: var(--secondary-dark-color);
   border-radius: 10px;
 }
 
-.inner img{
+.inner img {
   height: 150px;
   object-fit: contain;
+}
+
+.error {
+  padding-top: 8px;
+  font-size: 14px;
+  color: #ee0024;
+}
+
+.error::before {
+  content: "*";
 }
