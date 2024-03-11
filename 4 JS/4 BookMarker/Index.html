@@ -36,13 +36,19 @@
                         <i class="fa-solid fa-book-bookmark pe-2"></i>
                         Site Name</label>
                     <input type="text" placeholder="Bookmark Name" class="form-control" id="bookmarkName">
+                    <div class="error d-none">
+                        Website Name should be at least 3 characters and first one is capitalized
+                    </div>
                 </div>
                 <div class="site-url w-100 d-flex flex-column justify-content-center my-3">
                     <label for="bookmarkURL" class="pb-2 fw-semibold">
                         <i class="fa-solid fa-link pe-2"></i>Site URL</label>
                     <input type="url" placeholder="Website URL" class="form-control" id="bookmarkURL">
+                    <div class="error d-none">
+                        Website URL should be valid
+                    </div>
                 </div>
-                <button class="btn submit-btn px-5 my-3">Submit</button>
+                <button class="btn submit-btn px-5 my-3" onclick="addWebsite()">Submit</button>
             </div>
             <table class="table mt-4 text-center bg-light">
                 <thead>
@@ -53,7 +59,9 @@
                         <th class="text-capitalize">Delete</th>
                     </tr>
                 </thead>
-                <tbody id="tableContent"></tbody>
+                <tbody id="websitesTableContent">
+                    
+                </tbody>
             </table>
         </div>
     </main>
