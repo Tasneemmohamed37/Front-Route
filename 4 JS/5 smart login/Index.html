@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <!-- [ font awesome ] -->
+    <link rel="stylesheet" href="css/all.min.css">
+
+    <!-- [ bootstrap ] -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- [ main style ] -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <main>
+        <div class="container text-center py-5 d-flex justify-content-center">
+            <div class="group p-5 w-75">
+                <h1>Smart Login System</h1>
+                <div class="inputs py-2">
+                    <div class="input-group mb-3">
+                        <input type="email" class="form-control" placeholder="Enter Your Email" aria-label="email"
+                            aria-describedby="basic-addon1" id="email">
+                    </div>
+                    <div class="input-group mb-3">
+                        <input type="password" class="form-control" placeholder="Enter Password"  id="password">
+                    </div>
+                </div>
+                <div class="error d-none text-center mb-3" id="errorMsg">
+                    email or password wrong , please write correct data !!
+                </div>
+                <button class="form-control mb-3" onclick="logIn()">Login</button>
+                <p class="fw-semibold">Don`t have an account? <a href="signUp.html">Sign Up</a></p>
+            </div>
+        </div>
+    </main>
+
+    <!-- [ bootstrap js file] -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <!-- [ main js file] -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

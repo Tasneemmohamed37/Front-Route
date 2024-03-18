@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <!-- [ font awesome ] -->
+    <link rel="stylesheet" href="css/all.min.css">
+
+    <!-- [ bootstrap ] -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- [ main style ] -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <main>
+        <div class="container text-center py-5 d-flex justify-content-center">
+            <div class="group p-5 w-75">
+                <h1>Smart Login System</h1>
+                <div class="inputs py-2">
+                    <div class="content mb-3">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Enter Your Name" aria-label="name"
+                                aria-describedby="basic-addon1" id="name" oninput="validate(nameInput,nameRegEx)">
+                        </div>
+                        <div class="error d-none">
+                            Name must start with Capital letter followed by 3 characters or
+                            more
+                        </div>
+                    </div>
+
+                    <div class="content mb-3">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Enter Your Email" aria-label="email"
+                                aria-describedby="basic-addon1" id="email" oninput="validate(emailInput,emailRegEx)">
+                        </div>
+                        <div class="error d-none">
+                            Email must contain @
+                        </div>
+                        <div class="error d-none eExist">
+                            this Email already exist, please write different one!!
+                        </div>
+                    </div>
+
+                    <div class="content mb-3">
+                        <div class="input-group">
+                            <input type="password" class="form-control" placeholder="Enter Password"
+                                aria-label="password" aria-describedby="basic-addon1" id="password"
+                                oninput="validate(passwordInput,passwordRegEx)">
+                        </div>
+                        <div class="error d-none">
+                            please write strong password contain 1 upper char, 1 special char, 1 number, 1 lower char
+                        </div>
+                    </div>
+
+                </div>
+                <button class="form-control mb-3" onclick="signUp()">Sign Up</button>
+                <p class="fw-semibold">You have an account? <a href="Index.html">SignIn</a></p>
+            </div>
+        </div>
+    </main>
+
+    <!-- [ bootstrap js file] -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <!-- [ main js file] -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+:root {
+  --bg-clr: #24353f;
+  --main-txt: #17a2b8;
+  --secondary-txt: #ced4da;
+  --white-txt: #fff;
+}
+
+body {
+  background-color: var(--bg-clr);
+}
+
+.group {
+  box-shadow: -5px 2px 54px -9px rgba(0, 0, 0, 1);
+}
+
+h1,
+button {
+  color: var(--main-txt) !important;
+}
+
+button{
+  border-color: var(--main-txt) !important;
+}
+
+button:hover{
+  color: #fff !important;
+  background-color: #17a2b8;
+  border-color: #17a2b8;
+}
+
+p,
+a {
+  color: var(--white-txt);
+}
+
+a {
+  text-decoration: none !important;
+}
+
+a:hover{
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.form-control {
+  background-color: transparent;
+}
+
+.form-control::placeholder {
+  color: var(--secondary-txt) !important;
+}
+
+input.form-control {
+  color: var(--white-txt) !important;
+}
+
+.form-control:focus {
+  background-color: transparent;
+  border-color: #86b7fe;
+  box-shadow:none;
+}
+
+.error {
+  text-align: left;
+  font-size: 14px;
+  color: #ee0024;
+}
+
+.error::before {
+  content: "*";
+}
+
+.form-control.is-valid,
+.form-control.is-valid:focus{
+  border-color: var(--secondary-txt);
+  box-shadow: none;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23007bff' d='M2.3 6.73.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e")
+}
