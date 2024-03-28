@@ -1,0 +1,76 @@
+:root {
+    --main-dark-clr: #1e202b;
+    --blue-clr: #009ad8;
+    --second-text-clr: #bfc1c8;
+}
+
+/* ?---------------- [ start nav ] ------------- */
+nav {
+    background-color: var(--main-dark-clr);
+}
+
+nav .nav-link,
+.navbar-toggler {
+    color: white;
+}
+
+nav .website-name {
+    font-size: 1rem;
+}
+
+nav .website-description {
+    font-size: .6rem;
+    color: var(--second-text-clr);
+    display: block;
+}
+
+.navbar-nav .nav-link {
+    transform: 400ms;
+}
+
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link:hover {
+    border: 1px solid var(--blue-clr) !important;
+    border-radius: 30px;
+    color: var(--blue-clr);
+}
+
+/* ?---------------- [ End nav ] ------------- */
+
+/* ~---------------- [ start main] ------------ */
+main {
+    background-image: url("https://routeweather.netlify.app/images/banner.png");
+    background-repeat: no-repeat;
+    background-color: var(--main-dark-clr);
+    color: var(--second-text-clr);
+}
+
+/* ~---------------- [ End main] ------------ */
+
+
+/* !---------------- [ start footer ] ---------- */
+footer {
+    background-color: #262936;
+}
+
+footer p {
+    color: var(--second-text-clr);
+}
+
+footer ul li {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: var(--main-dark-clr);
+    color: var(--blue-clr);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer ul li:hover {
+    background-color: var(--blue-clr);
+    color: var(--second-text-clr);
+}
+
+/* !---------------- [ end footer ] ---------- */
