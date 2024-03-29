@@ -57,8 +57,48 @@
 
 
     <!--~---------------- [ start main] --------------->
-    <main class="vh-100 m-0">
-        <div class="container">
+    <main class="m-0">
+        <div class="container py-5">
+            <div class="position-relative">
+                <input type="search" id="location" class="w-100" placeholder="Find your location..."
+                    oninput="getWeather()">
+                <button type="button" onclick="getWeather()">Find</button>
+            </div>
+            <div class="row py-5">
+                <div class="col-lg-4">
+                    <div class="card">
+                        <div class="card-header d-flex justify-content-between">
+                            <h6 id="currentDay"></h6>
+                            <h6 id="currentDate"></h6>
+                        </div>
+                        <div class="card-body" id="todayCard">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card second-day text-center">
+                        <div class="card-header d-flex justify-content-between">
+                            <h6 class="mx-auto" id="nextDay">Friday</h6>
+                        </div>
+                        <div class="card-body d-flex flex-column justify-content-center align-items-center gap-2"
+                            id="nextDayCard">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card third-day text-center">
+                        <div class="card-header d-flex justify-content-between">
+                            <h6 class="mx-auto" id="nextNextDay">Saturday</h6>
+                        </div>
+                        <div class="card-body d-flex flex-column justify-content-center align-items-center gap-2"
+                            id="nextNextDayCard">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         </div>
     </main>
@@ -68,18 +108,23 @@
     <!--!---------------- [ start footer ] --------------->
     <footer class="m-0">
         <div class="container py-5">
-            <div class="subscribe">
-                <div class="search">
-
+            <div class="subscribe ">
+                <div class="row d-flex justify-content-between">
+                    <div class="search col-md-8">
+                        <form class="position-relative">
+                            <input type="search" class="w-100" placeholder="Enter your email to subscribe...">
+                            <button type="button">Subscribe</button>
+                        </form>
+                    </div>
+                    <ul class="col-md-4 list-unstyled d-flex gap-2 w-auto">
+                        <li><i class="fa-brands fa-facebook-f"></i></li>
+                        <li><i class="fa-brands fa-twitter"></i></li>
+                        <li><i class="fa-brands fa-google-plus-g"></i></li>
+                        <li><i class="fa-brands fa-pinterest"></i></li>
+                    </ul>
                 </div>
-                <ul class="list-unstyled d-flex gap-2">
-                    <li><i class="fa-brands fa-facebook-f"></i></li>
-                    <li><i class="fa-brands fa-twitter"></i></li>
-                    <li><i class="fa-brands fa-google-plus-g"></i></li>
-                    <li><i class="fa-brands fa-pinterest"></i></li>
-                </ul>
             </div>
-            <p>Copyright 2014 Company name. Designed by Themezy. All rights reserved</p>
+            <p class="my-2">Copyright 2014 Company name. Designed by Themezy. All rights reserved</p>
         </div>
     </footer>
     <!--!---------------- [ end footer ] ----------------->

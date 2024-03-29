@@ -1,5 +1,6 @@
 :root {
     --main-dark-clr: #1e202b;
+    --second-dark-clr: #262936;
     --blue-clr: #009ad8;
     --second-text-clr: #bfc1c8;
 }
@@ -43,6 +44,45 @@ main {
     background-repeat: no-repeat;
     background-color: var(--main-dark-clr);
     color: var(--second-text-clr);
+    min-height: 100vh;
+}
+
+main .card {
+    background-color: var(--second-dark-clr);
+    color: var(--second-text-clr);
+    min-height: 50vh;
+    --bs-card-group-margin: 0 !important;
+}
+
+@media screen and (max-width : 900px) {
+    main .row{
+        gap: 1.5rem ;
+    }
+}
+
+main .card .num {
+    font-size: 4rem;
+    font-weight: bold;
+    color: white;
+}
+
+main .card .num sub {
+    position: relative;
+    top: -30px;
+}
+
+main .card .custom {
+    color: var(--blue-clr);
+}
+
+.card.second-day {
+    background-color: #1e2233;
+}
+
+.card.third-day sub,
+.card.second-day sub{
+position: relative;
+top: -10px;
 }
 
 /* ~---------------- [ End main] ------------ */
@@ -50,7 +90,7 @@ main {
 
 /* !---------------- [ start footer ] ---------- */
 footer {
-    background-color: #262936;
+    background-color: var(--second-dark-clr);
 }
 
 footer p {
@@ -66,11 +106,42 @@ footer ul li {
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
 footer ul li:hover {
     background-color: var(--blue-clr);
     color: var(--second-text-clr);
+}
+
+footer form input,
+main input {
+    border: none;
+    padding: 15px;
+    border-radius: 30px;
+    color: var(--second-text-clr);
+    background-color: var(--main-dark-clr);
+}
+
+footer form input:focus,
+main input:focus {
+    outline: none;
+}
+
+footer button,
+main button {
+    color: white;
+    background-color: var(--blue-clr);
+    border: none;
+    border-radius: 30px;
+    padding: 10px 15px;
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+}
+
+main button {
+    padding-inline: 30px;
 }
 
 /* !---------------- [ end footer ] ---------- */
