@@ -2,5 +2,7 @@
 <h1>{{storeData.name}}</h1>
 <h4>Our Branches</h4>
 <ul>
-    <li *ngFor="let item of storeData.branches">{{item}}</li>
+    <li *ngFor="let item of storeData.branches">
+        {{item}} <!-- Add this line for debugging -->
+    </li>
 </ul>
