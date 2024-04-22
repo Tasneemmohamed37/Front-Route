@@ -1,5 +1,6 @@
-<table class="table">
-    <thead class="thead-dark">
+
+<table class="table my-4">
+    <thead class="table-dark">
         <tr>
             <th scope="col">#</th>
             <th scope="col">Name</th>
@@ -11,19 +12,24 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let prd of prdList">
-            <th scope="row">{{prd.id}}</th>
+        <tr *ngFor="let prd of prdList; let i = index; trackBy:prdTrackByFunc" >
+            <th scope="row">{{i+1}}</th>
             <td>{{prd.name}}</td>
-            <td>{{prd.price}}</td>
-            <td>{{prd.quantity}}</td>
-            <td><img src="{{prd.imgUrl}}" alt=""></td>
+            <td>{{prd.price | currency}}</td>
+            <td>
+                <div [ngSwitch]="prd.quantity">
+                    <div *ngSwitchCase="0">Out Of Stock!</div>
+                    <div *ngSwitchCase="1">Last Item!!</div>
+                    <div *ngSwitchDefault>{{prd.quantity}}</div>
+                </div>
+            </td>
+            <td><img LightBox src="{{prd.imgUrl}}" alt=""></td>
             <td>{{prd.categoryID}}</td>
             <td>
-                <input #itemCount type="number" class="me-1"> 
-                <button class="btn btn-secondary" (click)="buy(prd.price, itemCount.value)">Buy</button>
+                <input #itemCount type="number" class="me-1">
+                <!-- <button class="btn btn-secondary" (click)="buy(prd.price, itemCount.value)">Buy</button> -->
             </td>
         </tr>
     </tbody>
 </table>
 
-<h3 class="text-center">Order Total Price = {{orderTotalPrice}}$</h3>

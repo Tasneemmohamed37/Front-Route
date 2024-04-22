@@ -1,0 +1,10 @@
+<h2 class="text-center">Create Your Own Order</h2>
+
+<select class="form-select mt-4" aria-label="Default select example" [(ngModel)]="selectedCatId">
+    <option *ngFor='let cat of catList' value="{{cat.id}}" >{{cat.name}}</option>
+</select>
+
+
+<app-products-list></app-products-list>
+
+<h5 class="text-center my-3">Order Total Price = {{orderTotalPrice}}$</h5>
