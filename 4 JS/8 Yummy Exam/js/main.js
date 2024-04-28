@@ -9,6 +9,17 @@ const formRegex = {
 }
 
 //* functions 
+function hideLoading(){
+    $(".loading").fadeOut(1000, function () {
+        $("body").css({ overflow: "auto" });
+    });
+}
+
+function showLoading(){
+    $(".loading").show();
+    $("body").css({ overflow: "hidden" });
+}
+
 function collapseAside() {
     $("#menuIcon").show();
     $("#closeIcon").hide();
@@ -16,8 +27,10 @@ function collapseAside() {
 }
 
 async function displayMeals(search) {
+    showLoading();
     let data = await fetch(`${baseUrl}${search}`);
     let apiResponse = await data.json();
+    hideLoading();
     $('#mealRow').html("");
     apiResponse.meals.forEach(function (meal) {
         $('#mealRow').append(`
@@ -39,10 +52,12 @@ async function displayMeals(search) {
 }
 
 async function displayMealDetails(mealID) {
+    showLoading();
     $("main").addClass("d-none");
     $("#mealDetails").removeClass("d-none");
     let data = await fetch(`${baseUrl}lookup.php?i=${mealID}`);
     let apiResponse = await data.json();
+    hideLoading();
     let meal = apiResponse.meals[0];
     let recipes = [];
     let tags = [];
@@ -89,8 +104,10 @@ async function displayMealDetails(mealID) {
 }
 
 async function displayCategories() {
+    showLoading();
     let data = await fetch(`${baseUrl}categories.php`);
     let apiResponse = await data.json();
+    hideLoading();
     apiResponse.categories.forEach(function (cat) {
         $('#categoryRow').append(`
             <div class="col-md-3">
@@ -117,8 +134,10 @@ async function displayCategoryMeals(catName) {
 }
 
 async function displayArea() {
+    showLoading();
     let data = await fetch(`${baseUrl}list.php?a=list`);
     let apiResponse = await data.json();
+    hideLoading();
     apiResponse.meals.forEach(function (area) {
         $('#areaRow').append(`
             <div class="col-md-3">
@@ -142,8 +161,10 @@ async function displayAreaMeals(areaName) {
 }
 
 async function displayIngredients() {
+    showLoading();
     let data = await fetch(`${baseUrl}list.php?i=list`);
     let apiResponse = await data.json();
+    hideLoading();
     apiResponse.meals.forEach(function (ingredient) {
         $('#ingredientsRow').append(`
             <div class="col-md-3">
@@ -193,6 +214,7 @@ function isConfirm() {
 // * events
 // --------------------------------- [ home ] -------------
 $(document).ready(async function () {
+    hideLoading();
     collapseAside();
     displayMeals('search.php?s=');
 });
