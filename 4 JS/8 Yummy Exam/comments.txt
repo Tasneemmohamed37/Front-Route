@@ -1,0 +1,5 @@
+- loading screen
+- aside animation
+- home meals, when add padding to inner div, overlay div hight is greater than img hight
+- separate files or only one html file? [when click on aside link must d-noe for all rest]
+- add translate on search process
