@@ -1,6 +1,12 @@
 //* Variables
 let baseUrl = 'https://www.themealdb.com/api/json/v1/1/';
-
+const formRegex = {
+    contactName: /^[a-zA-Z]+\s*[a-zA-Z]+$/,
+    contactEmail: /^\w+@\w{2,10}\.\w+$/,
+    contactPhone: /^(\+2)?01[0125]\d{8}$/,
+    contactAge: /^[1-9][0-9]?$/,
+    contactPassword: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/
+}
 
 //* functions 
 function collapseAside() {
@@ -104,7 +110,7 @@ async function displayCategories() {
     });
 }
 
-async function displayCategoryMeals(catName){
+async function displayCategoryMeals(catName) {
     $("#categoriesContainer").addClass("d-none");
     $("main").removeClass("d-none");
     displayMeals(`filter.php?c=${catName}`)
@@ -129,7 +135,7 @@ async function displayArea() {
     });
 }
 
-async function displayAreaMeals(areaName){
+async function displayAreaMeals(areaName) {
     $("#areaContainer").addClass("d-none");
     $("main").removeClass("d-none");
     displayMeals(`filter.php?a=${areaName}`)
@@ -155,11 +161,33 @@ async function displayIngredients() {
     });
 }
 
-async function displayIngredientsMeals(ingredientName){
+async function displayIngredientsMeals(ingredientName) {
     $("#ingredientsContainer").addClass("d-none");
     $("main").removeClass("d-none");
     displayMeals(`filter.php?i=${ingredientName}`)
 }
+
+function validateInput(input, regex) {
+    let value = input.value;
+    if (regex.test(value)) {
+        input.classList.add("is-valid");
+        input.classList.remove("is-invalid");
+    } else {
+        input.classList.add("is-invalid");
+        input.classList.remove("is-valid");
+    }
+}
+
+function isConfirm() {
+    if ($("#contactPassword").val() == $("#confirm").val()) {
+        $("#confirm").addClass("is-valid");
+        $("#confirm").removeClass("is-invalid");
+    } else {
+        $("#confirm").addClass("is-invalid");
+        $("#confirm").removeClass("is-valid");
+    }
+}
+
 
 
 // * events
@@ -234,3 +262,34 @@ $("#ingredientsBtn").on("click", function () {
     collapseAside();
     displayIngredients();
 });
+
+
+// ------------------------------- [ Contact ] ------------------
+$("#contactBtn").on("click", function () {
+    $("#contactContainer").removeClass("d-none");
+    $("#ingredientsContainer").addClass("d-none");
+    $("#areaContainer").addClass("d-none");
+    $("#categoriesContainer").addClass("d-none");
+    $("main").addClass("d-none");
+    $("#mealDetails").addClass("d-none");
+    collapseAside();
+
+    let contactInputs = document.querySelectorAll("#contactRow input");
+
+    for (let input of contactInputs) {
+        input.addEventListener("keyup", function () {
+            if (input.id !== "confirm") {
+                validateInput(this, formRegex[`${this.id}`]);
+            } else {
+                isConfirm();
+            }
+            const validInputs = document.querySelectorAll(".is-valid");
+            if (validInputs.length == 6) {
+                $("#submitBtn").removeAttr("disabled");
+            } else {
+                $("#submitBtn").setAttribute("disabled", "true");
+            }
+        });
+    }
+});
+

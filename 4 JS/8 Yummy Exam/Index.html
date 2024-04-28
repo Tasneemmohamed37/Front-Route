@@ -38,7 +38,7 @@
                         <a href="#" id="ingredientsBtn">Ingredients</a>
                     </li>
                     <li class="pt-3">
-                        <a href="#" id="contactBtn">Contact</a>
+                        <a href="#" id="contactBtn">Contact Us</a>
                     </li>
                 </ul>
                 <div>
@@ -121,12 +121,58 @@
     </div>
     <!--^------- [ end Area ] ------------->
 
-    <!--^------- [ start Ingredients ] ------------->
+    <!--&------- [ start Ingredients ] ------------->
     <div class="container py-5 d-none" id="ingredientsContainer">
         <div class="row" id="ingredientsRow">
         </div>
     </div>
-    <!--^------- [ end Ingredients ] ------------->
+    <!--&------- [ end Ingredients ] ------------->
+
+
+    <!--*------- [ start contact ] ------------->
+    <div class="container py-5 vh-100 d-flex justify-content-center align-items-center d-none" id="contactContainer">
+        <div class="row" id="contactRow">
+            <div class="col-md-6">
+                <div class="inner py-2">
+                    <input id="contactName" class="form-control bg-transparent text-white" type="text"
+                        placeholder="Enter Your Name">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="inner py-2">
+                    <input id="contactEmail" class="form-control bg-transparent text-white" type="email"
+                        placeholder="Enter Your Email">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="inner py-2">
+                    <input id="contactPhone" class="form-control bg-transparent text-white" type="text" maxlength="11"
+                        placeholder="Enter Your Phone">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="inner py-2">
+                    <input id="contactAge" class="form-control bg-transparent text-white" type="number"
+                        placeholder="Enter Your Age">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="inner py-2">
+                    <input id="contactPassword" class="form-control bg-transparent text-white" type="password"
+                        placeholder="Enter Your Password">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="inner py-2">
+                    <input id="confirm" class="form-control bg-transparent text-white" type="password"
+                        placeholder="Repassword">
+                </div>
+            </div>
+            <button id="submitBtn" disabled class="btn btn-outline-danger px-2 mt-3 w-auto mx-auto">Submit</button>
+        </div>
+    </div>
+    <!--*------- [ end contact ] ------------->
+
 
     <!-- [ Jquery ] -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
