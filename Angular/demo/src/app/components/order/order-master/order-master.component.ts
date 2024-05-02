@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ICategory } from '../../../models/icategory';
 import { ProductsListComponent } from '../products-list/products-list.component';
@@ -12,21 +12,32 @@ import { CommonModule } from '@angular/common';
   styleUrl: './order-master.component.scss'
 })
 
-export class OrderMasterComponent {
+export class OrderMasterComponent implements OnInit {
   catList: ICategory[];
-  selectedCatId:number = 1;
+  selectedCatId:number = 0;
   orderTotalPrice: number = 0;
   // prdList: IProduct[]=;
 
   constructor(){
     this.catList = [
+      {id:0, name:'all'},
       {id:1, name:'laptop'},
       {id:2, name:'mobile'},
       {id:3, name:'tab'}
     ];
   }
 
-  buy(price: number, count:any){
-    this.orderTotalPrice = price * count ;
+  ngOnInit(): void {
+    // this.getTotalPrice();
+  }
+
+
+
+  // buy(price: number, count:any){
+  //   this.orderTotalPrice = price * count ;
+  // }
+
+  onTotalPriceChanged(totalPrice:number){
+    this.orderTotalPrice = totalPrice ;
   }
 }

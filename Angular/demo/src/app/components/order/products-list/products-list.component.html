@@ -12,7 +12,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let prd of prdList; let i = index; trackBy:prdTrackByFunc" >
+        <tr *ngFor="let prd of prdListOfCategory; let i = index; trackBy:prdTrackByFunc" >
             <th scope="row">{{i+1}}</th>
             <td>{{prd.name}}</td>
             <td>{{prd.price | currency}}</td>
@@ -27,7 +27,7 @@
             <td>{{prd.categoryID}}</td>
             <td>
                 <input #itemCount type="number" class="me-1">
-                <!-- <button class="btn btn-secondary" (click)="buy(prd.price, itemCount.value)">Buy</button> -->
+                <button class="btn btn-secondary" (click)="buy(prd.price, itemCount.value)">Buy</button>
             </td>
         </tr>
     </tbody>
