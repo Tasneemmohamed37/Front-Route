@@ -27,7 +27,8 @@
             <td>{{prd.categoryID}}</td>
             <td>
                 <input #itemCount type="number" class="me-1">
-                <button class="btn btn-secondary" (click)="buy(prd.price, itemCount.value)">Buy</button>
+                <button class="btn btn-primary" (click)="buy(prd.price, itemCount.value)">Add to card</button>
+                <button class="btn btn-secondary ms-1" (click)="prdDetails(prd.id)">Details</button>
             </td>
         </tr>
     </tbody>

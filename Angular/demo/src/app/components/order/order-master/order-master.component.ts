@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild, viewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ICategory } from '../../../models/icategory';
 import { ProductsListComponent } from '../products-list/products-list.component';
@@ -12,11 +12,11 @@ import { CommonModule } from '@angular/common';
   styleUrl: './order-master.component.scss'
 })
 
-export class OrderMasterComponent implements OnInit {
+export class OrderMasterComponent implements OnInit, AfterViewInit {
   catList: ICategory[];
   selectedCatId:number = 0;
   orderTotalPrice: number = 0;
-  // prdList: IProduct[]=;
+  @ViewChild('divViewChild') clientNameDVC:any;
 
   constructor(){
     this.catList = [
@@ -27,17 +27,17 @@ export class OrderMasterComponent implements OnInit {
     ];
   }
 
-  ngOnInit(): void {
-    // this.getTotalPrice();
+
+  ngAfterViewInit(): void {
+    console.log(this.clientNameDVC.nativeElement.value = 'Enter Your Name: ');
   }
 
+  ngOnInit(): void {
+  }
 
-
-  // buy(price: number, count:any){
-  //   this.orderTotalPrice = price * count ;
-  // }
 
   onTotalPriceChanged(totalPrice:number){
     this.orderTotalPrice = totalPrice ;
   }
+
 }

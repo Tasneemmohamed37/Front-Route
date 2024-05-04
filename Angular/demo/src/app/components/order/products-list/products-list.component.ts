@@ -2,6 +2,8 @@ import { Component, EventEmitter, OnChanges, OnInit, Output, SimpleChanges, inpu
 import { IProduct } from '../../../models/iproduct';
 import { CommonModule } from '@angular/common';
 import { Input } from '@angular/core';
+import { StaticProductsService } from '../../../services/static-products.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-products-list',
@@ -11,32 +13,20 @@ import { Input } from '@angular/core';
   styleUrl: './products-list.component.scss'
 })
 export class ProductsListComponent implements OnInit, OnChanges {
-
-  prdList: IProduct[];
   prdListOfCategory: IProduct[]=[];
   orderTotalPrice: number = 0;
   @Input() sendCategoryID:number=0;
   @Output() totalPriceEvent: EventEmitter<number>; 
 
 
-  constructor(){
-    this.prdList = [
-      { id:1, name:'dell laptop', price: 230, quantity: 3, imgUrl:'https://picsum.photos/100/50', categoryID:1},
-      { id:2, name:'apple macBook laptop', price: 300, quantity: 0, imgUrl:'https://picsum.photos/100/50', categoryID:1},
-      { id:3, name:'samsung mobile', price: 150, quantity: 2, imgUrl:'https://picsum.photos/100/50', categoryID:2},
-      { id:4, name:'samsung mobile2', price: 150, quantity: 1, imgUrl:'https://picsum.photos/100/50', categoryID:2},
-      { id:5, name:'samsung tab', price: 150, quantity: 2, imgUrl:'https://picsum.photos/100/50', categoryID:3},
-      { id:6, name:'samsung tab2', price: 150, quantity: 2, imgUrl:'https://picsum.photos/100/50', categoryID:3},
-    ];
-
-    this.prdListOfCategory= this.prdList;
-
+  constructor(private router: Router, private staticPrdsServiece: StaticProductsService){
     this.totalPriceEvent  = new EventEmitter<number>();
   }
 
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    this.filterProductsByCatID();
   }
+  
   ngOnChanges(): void {
     this.filterProductsByCatID();
   }
@@ -53,8 +43,12 @@ export class ProductsListComponent implements OnInit, OnChanges {
 
   private filterProductsByCatID(){
     if(this.sendCategoryID == 0)
-      this.prdListOfCategory = this.prdList;
+      this.prdListOfCategory = this.staticPrdsServiece.getAllProducts();
     else
-      this.prdListOfCategory = this.prdList.filter(prd => prd.categoryID == this.sendCategoryID);
+      this.prdListOfCategory = this.staticPrdsServiece.getProductsByCategoryID(this.sendCategoryID);
+  }
+
+  prdDetails(prdId:number){
+    this.router.navigate(['/products',prdId]);
   }
 }

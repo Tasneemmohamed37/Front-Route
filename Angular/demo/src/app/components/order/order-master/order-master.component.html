@@ -7,4 +7,7 @@
 
 <app-products-list [sendCategoryID]="selectedCatId" (totalPriceEvent)="onTotalPriceChanged($event)" ></app-products-list>
 
+<div>
+    <input #divViewChild type="text" class="form-control">
+</div>
 <h5 class="text-center my-3">Order Total Price = {{orderTotalPrice}}$</h5>
