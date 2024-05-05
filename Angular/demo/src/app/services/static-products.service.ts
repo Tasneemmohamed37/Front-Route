@@ -36,5 +36,9 @@ export class StaticProductsService {
     return prd ? prd : null ;
   }
 
-
+  getProductsIDs():number[]
+  {
+    let IDs = this.prdList.map(prd=> prd.id);
+    return IDs;
+  }
 }

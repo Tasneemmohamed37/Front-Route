@@ -1,1 +1,19 @@
-<p>product works! {{prdID}}</p>
+<div class="d-flex justify-content-center align-items-center gap-5 h-100">
+    <a (click)="previous()" class="btn btn-secondary my-2"> <- Previous</a>
+    <div class="card" style="width: 18rem;">
+        <img src="{{prd?.imgUrl}}" class="card-img-top" alt="...">
+        <div class="card-body text-center">
+            <h5 class="card-title">{{prd?.name}}</h5>
+            <div class="card-text ">
+                <div>Price: {{prd?.price | currency}}</div>
+                <div [ngSwitch]="prd?.quantity">
+                    <div *ngSwitchCase="0">Out Of Stock!</div>
+                    <div *ngSwitchCase="1">Last Item!!</div>
+                    <div *ngSwitchDefault>Quantity: {{prd?.quantity}}</div>
+                </div>
+            </div>
+            <a (click)="goBack()" class="btn btn-primary my-2">Back</a>
+        </div>
+    </div>
+    <a (click)="next()" class="btn btn-secondary my-2">Next -> </a>
+</div>
