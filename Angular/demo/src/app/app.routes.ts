@@ -17,6 +17,7 @@ export const routes: Routes = [
         {path: 'order', component: OrderMasterComponent},
     ]},
     {path: 'login', component: LoginComponent},
+    {path: 'logout', component: LoginComponent},
     {path:'**', component:NotFoundComponent} // wild card path
 ];
 
