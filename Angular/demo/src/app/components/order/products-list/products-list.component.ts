@@ -3,12 +3,14 @@ import { IProduct } from '../../../models/iproduct';
 import { CommonModule } from '@angular/common';
 import { Input } from '@angular/core';
 import { StaticProductsService } from '../../../services/static-products.service';
-import { Router } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { ProductsService } from '../../../services/products.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-products-list',
   standalone: true,
-  imports: [CommonModule ],
+  imports: [CommonModule, HttpClientModule,RouterOutlet, RouterLink, RouterLinkActive ],
   templateUrl: './products-list.component.html',
   styleUrl: './products-list.component.scss'
 })
@@ -19,16 +21,17 @@ export class ProductsListComponent implements OnInit, OnChanges {
   @Output() totalPriceEvent: EventEmitter<number>; 
 
 
-  constructor(private router: Router, private staticPrdsServiece: StaticProductsService){
+  constructor(private router: Router, private prdService:ProductsService){
     this.totalPriceEvent  = new EventEmitter<number>();
   }
 
+
   ngOnInit(): void {
-    this.filterProductsByCatID();
+    this.prdService.getProductsByCategoryId(this.sendCategoryID).subscribe(products => {this.prdListOfCategory = products});
   }
   
   ngOnChanges(): void {
-    this.filterProductsByCatID();
+    this.prdService.getProductsByCategoryId(this.sendCategoryID).subscribe(products => {this.prdListOfCategory = products});
   }
 
   buy(price: number, count:any){
@@ -41,12 +44,7 @@ export class ProductsListComponent implements OnInit, OnChanges {
     return prd.id ;
   }
 
-  private filterProductsByCatID(){
-    if(this.sendCategoryID == 0)
-      this.prdListOfCategory = this.staticPrdsServiece.getAllProducts();
-    else
-      this.prdListOfCategory = this.staticPrdsServiece.getProductsByCategoryID(this.sendCategoryID);
-  }
+  
 
   prdDetails(prdId:number){
     this.router.navigate(['/products',prdId]);

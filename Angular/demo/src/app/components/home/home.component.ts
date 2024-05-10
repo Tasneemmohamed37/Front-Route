@@ -3,12 +3,13 @@ import { StoreData } from '../../models/store-data';
 import { CommonModule } from '@angular/common';
 import { PromotionAdsService } from '../../services/promotion-ads.service';
 import { Subscription } from 'rxjs';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule ],
+  imports: [CommonModule, HttpClientModule ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })

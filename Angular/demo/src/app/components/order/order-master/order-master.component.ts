@@ -3,11 +3,12 @@ import { FormsModule } from '@angular/forms';
 import { ICategory } from '../../../models/icategory';
 import { ProductsListComponent } from '../products-list/products-list.component';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-order-master',
   standalone: true,
-  imports: [CommonModule, FormsModule,  ProductsListComponent],
+  imports: [CommonModule, FormsModule,  ProductsListComponent, HttpClientModule],
   templateUrl: './order-master.component.html',
   styleUrl: './order-master.component.scss'
 })
@@ -29,7 +30,7 @@ export class OrderMasterComponent implements OnInit, AfterViewInit {
 
 
   ngAfterViewInit(): void {
-    console.log(this.clientNameDVC.nativeElement.value = 'Enter Your Name: ');
+    // console.log(this.clientNameDVC.nativeElement.value = 'Enter Your Name: ');
   }
 
   ngOnInit(): void {

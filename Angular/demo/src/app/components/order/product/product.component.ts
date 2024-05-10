@@ -3,11 +3,12 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router} from '@angular/router';
 import { IProduct } from '../../../models/iproduct';
 import { CommonModule, Location } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-product',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, HttpClientModule],
   templateUrl: './product.component.html',
   styleUrl: './product.component.scss'
 })

@@ -6,6 +6,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { LoginComponent } from './components/login/login.component';
 import { MainLayoutComponent } from './components/main-layout/main-layout.component';
 import { ProductComponent } from './components/order/product/product.component';
+import { authGuard } from './gaurds/auth.guard';
+import { ProductFormComponent } from './components/order/product-form/product-form.component';
 
 
 export const routes: Routes = [
@@ -14,7 +16,8 @@ export const routes: Routes = [
         {path: 'home', component: HomeComponent},
         {path: 'products', component: ProductsListComponent},
         {path: 'products/:id', component: ProductComponent},
-        {path: 'order', component: OrderMasterComponent},
+        {path: 'product/add', component: ProductFormComponent, canActivate:[authGuard]},
+        {path: 'order', component: OrderMasterComponent, canActivate:[authGuard]},
     ]},
     {path: 'login', component: LoginComponent},
     {path: 'logout', component: LoginComponent},
