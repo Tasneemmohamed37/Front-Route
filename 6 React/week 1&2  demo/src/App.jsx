@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Card from './components/card/Card'
 import Loading from './components/loading/Loading'
+import Home from './pages/home/Home'
 
 function App() {
 
@@ -50,14 +51,15 @@ function App() {
 
   return (
     <>
-    {/* <Loading/> */}
+    <Home/>
+    {/* <Loading/>
     <div className="max-w-screen-xl mx-auto">
       <div className="container mx-auto flex justify-evenly py-8">
         {data.map((product, i)=>{
           return <Card productObject={product} deleteFn={deleteProductCard} index={i}/>
         })}
       </div>
-    </div>
+    </div> */}
     </>
   )
 }
