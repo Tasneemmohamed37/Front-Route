@@ -5,6 +5,7 @@ import './App.css'
 import Card from './components/card/Card'
 import Loading from './components/loading/Loading'
 import Home from './pages/home/Home'
+import Login from './pages/login/Login'
 
 function App() {
 
@@ -51,7 +52,8 @@ function App() {
 
   return (
     <>
-    <Home/>
+    <Login/>
+    {/* <Home/> */}
     {/* <Loading/>
     <div className="max-w-screen-xl mx-auto">
       <div className="container mx-auto flex justify-evenly py-8">
