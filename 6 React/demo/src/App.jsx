@@ -5,7 +5,7 @@ import MainLayout from './components/main layout/MainLayout'
 import Trending from './pages/trending/Trending'
 import Login from './pages/login/Login'
 import NotFound from './pages/not found/NotFound'
-import { BrowserRouter, Route, RouterProvider, Routes, createBrowserRouter } from 'react-router-dom'
+import { BrowserRouter, Navigate, Route, RouterProvider, Routes, createBrowserRouter } from 'react-router-dom'
 
 function App() {
 
@@ -55,7 +55,7 @@ function App() {
         {index: true, element: <Home />},
         {path:"home", element: <Home />},
         {path: "/trending", element: <Trending />, children: [
-            {index: true, element: <h2 className="mt-20">movies</h2> },
+            {index: true, element: <Navigate replace to={'movies'}/> },
             {path: "movies", element: <h2 className="mt-20">movies</h2>},
             { path: "people", element: <h2 className="mt-20">People</h2> },
             { path: "tv", element: <h2 className="mt-20">Tv</h2> },
