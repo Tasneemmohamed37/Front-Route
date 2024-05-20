@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import Loading from '../../components/loading/Loading';
-import Card from '../../components/card/Card';
 import MovieCard from '../../components/movie card/MovieCard';
 import axios from 'axios';
 
@@ -27,10 +26,10 @@ export default function Home() {
         <>
             {(trendingMovies == null)? 
                 <Loading/> : 
-                <div className="max-w-screen-xl mx-auto">
+                <div className="max-w-screen-xl mx-auto my-5">
                     <div className="container mx-auto flex flex-wrap justify-evenly py-8">
                         {trendingMovies.map((m)=>{
-                            return <MovieCard movie={m}/>
+                            return <MovieCard movie={m} key={m.id}/>
                         })}
                     </div>
                 </div>
