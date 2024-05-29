@@ -7,7 +7,7 @@ export default function Navbar() {
     <>
     {/* todo => responsive */}
       <nav className={`bg-slate-700 text-white font-bold uppercase ${styles.nav}`}>
-        <div className="max-w-screen-xl mx-auto  py-7 px-3">
+        <div className="max-w-screen-lg mx-auto  py-7 px-3">
           <div className="container mx-auto flex justify-between">
             <h1 className="text-3xl">
               <Link to="/">START FRAMEWORK</Link>

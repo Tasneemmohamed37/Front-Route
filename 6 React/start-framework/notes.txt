@@ -1,0 +1,3 @@
+
+- bugs -> 1. transition and card click in portfolio component
+	   -> 2. username regex
