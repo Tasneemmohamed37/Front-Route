@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@300&display=swap");
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* add customer classes in component layer so can override it by utilities */
+@layer components {
+    .form-control {
+        @apply outline-none border-2 border-gray-200 px-3 py-1 rounded-lg
+    }
+
+    .btn-primary{
+        @apply px-8  uppercase text-white bg-mainColor rounded-lg
+    }
+
+    .error{
+        @apply text-red-600 font-bold mt-1
+    }
+}
+
+body{
+    font-family: "Encode Sans Expanded", sans-serif;
+}
