@@ -1,26 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import * as Yup from "yup";
 import { useFormik } from "formik";
+import axios from "axios";
+import { Navigate, useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 export default function SignUp() {
-  const passwordRegex =
-    /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/;
-  const nameRegex = /^[a-z0-9_-]{3,15}$/;
 
+  const passwordRegex = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/;
+  const nameRegex = /^[a-zA-Z]+ [a-zA-Z]+$/;
+  const phoneRegex = /(?:\+?20)?(0?1[0125]\d{8}|0?2\d{7,8}|0?3\d{7,8}|0?[4689]\d{7})/;
+  const [backEndSignUpErrorMsg, setBackEndSignUpErrorMsg] = useState(null);
+  const navigate = useNavigate();
+  
   const validateSchema = Yup.object({
     name: Yup.string()
       .required("Name is required")
       .matches(
         nameRegex,
-        "user name must be greater than 3 chars and less than 15"
+        "name must be two words separate with space and greater than 3 chars and less than 15 without any special chars"
       ),
-    phone: Yup.number()
+    phone: Yup.string()
       .required("Phone is required")
-      .min(18, "Age must be older than 18")
-      .max(60, "Age must be less than 60"),
+      .matches(phoneRegex, "phone must start with 01 followed by 0|1|2|5 then nine numbers"),
     email: Yup.string()
       .required("Email is required")
-      .email("email must contain @"),
+      .email("please enter valid email"),
     password: Yup.string()
       .required("Password is required")
       .matches(
@@ -29,7 +34,7 @@ export default function SignUp() {
       ),
     rePassword: Yup.string()
       .required("rePassword is required")
-      .matches(passwordRegex, "rePassword must be similar to Password"),
+      .oneOf([Yup.ref('password')],'rePassword and password must be the same'),
   });
 
   const formik = useFormik({
@@ -41,11 +46,29 @@ export default function SignUp() {
       rePassword: "",
     },
     validationSchema: validateSchema,
-    onSubmit: (values, { resetForm }) => {
-      console.log(values);
-      resetForm();
-    },
+    onSubmit: submitRegister
   });
+
+
+  async function submitRegister(values){
+    let loadingID = toast.loading('SignUp...');
+    try{
+      const {data} = await axios.post('https://ecommerce.routemisr.com/api/v1/auth/signup',values);
+      toast.dismiss(loadingID);
+        console.log(data); //todo save token in local storage 
+        toast.success('Account Created Successfully');
+        setTimeout(()=>{
+            if(data.message == 'success'){
+              navigate('/login');
+            }
+        },1000);
+      }
+      catch(error){
+        toast.dismiss(loadingID);
+        console.error('Error submitting form:', error);
+        setBackEndSignUpErrorMsg(error.response.data.message);
+      }
+  }
 
   return (
     <>
@@ -58,6 +81,7 @@ export default function SignUp() {
           className="flex flex-col gap-3 p-5"
           onSubmit={formik.handleSubmit}
         >
+          <div>
           <input
             type="text"
             placeholder="username"
@@ -72,6 +96,8 @@ export default function SignUp() {
           ) : (
             ""
           )}
+          </div>
+          <div>
           <input
             type="email"
             placeholder="Email"
@@ -86,10 +112,12 @@ export default function SignUp() {
           ) : (
             ""
           )}
-          <input
+          </div>
+          <div>
+            <input
             type="tel"
             placeholder="phone"
-            name="Phone"
+            name="phone"
             className="form-control"
             value={formik.values.phone}
             onChange={formik.handleChange}
@@ -100,6 +128,8 @@ export default function SignUp() {
           ) : (
             ""
           )}
+          </div>
+          <div>
           <input
             type="password"
             placeholder="Password"
@@ -114,6 +144,8 @@ export default function SignUp() {
           ) : (
             ""
           )}
+          </div>
+          <div>
           <input
             type="password"
             placeholder="rePassword"
@@ -125,6 +157,12 @@ export default function SignUp() {
           />
           {formik.errors.rePassword && formik.touched.rePassword ? (
             <div className="error">* {formik.errors.rePassword}</div>
+          ) : (
+            ""
+          )}
+          </div>
+          {backEndSignUpErrorMsg ? (
+            <div className="error">* {backEndSignUpErrorMsg}</div>
           ) : (
             ""
           )}

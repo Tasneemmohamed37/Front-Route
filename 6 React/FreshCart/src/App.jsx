@@ -6,6 +6,7 @@ import Home from "./components/home/Home";
 import Login from "./pages/auth/login/Login";
 import SignUp from "./pages/auth/signUp/SignUp";
 import NotFound from "./components/notFound/NotFound"
+import { Toaster } from "react-hot-toast";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -24,6 +25,7 @@ function App() {
   return (
     <>
     <RouterProvider router={routes}></RouterProvider>
+    <Toaster/>
     </>
   )
 }
