@@ -1,23 +1,33 @@
-import { useState } from "react";
 import "./App.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import MainLayout from "./components/mainLayout/MainLayout";
-import Home from "./components/home/Home";
+import MainLayout from "./components/Layouts/mainLayout/MainLayout";
+import Home from "./pages/home/Home";
 import Login from "./pages/auth/login/Login";
 import SignUp from "./pages/auth/signUp/SignUp";
-import NotFound from "./components/notFound/NotFound"
+import NotFound from "./pages/notFound/NotFound"
 import { Toaster } from "react-hot-toast";
+import AuthGard from "./components/authGard/AuthGard";
+import AuthLayout from "./components/Layouts/authLayout/AuthLayout";
 
 function App() {
-  const [count, setCount] = useState(0);
 
+  
   const routes = createBrowserRouter([
-    {path: "/", element: <MainLayout />, children: [
+    {path: "/", element:
+      <AuthGard>
+        <MainLayout />
+      </AuthGard>, 
+      children: [
       {index: true, element: <Home />},
       {path:"home", element: <Home />},
-      { path: "login", element: <Login /> },
-      { path: "signUp", element: <SignUp /> },
       { path: "*", element: <NotFound /> },
+    ]
+    },
+    {path: "auth", element:
+        <AuthLayout />, 
+      children: [
+      { path: "login", element: <Login /> },
+      { path: "signUp", element: <SignUp /> }
     ]
     },
   ]);

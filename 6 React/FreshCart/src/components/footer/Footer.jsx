@@ -14,7 +14,7 @@ export default function Footer() {
                 <h5 className="text-gray-900 text-xl">Get The FreshCard App</h5>
                 <p className="text-gray-600">we will send you a link, open it in your phone to download the app </p>
                 <div className="flex gap-5 px-4 my-4">
-                    <input type="text" placeholder="Email..." className="flex-grow form-control" />
+                    <input type="text" placeholder="Email..." className="form-control flex-grow" />
                     <button className="btn-primary">Share App Link</button>
                 </div>
                 <div className="flex justify-between mt-5 py-5 border-y border-gray-200">
