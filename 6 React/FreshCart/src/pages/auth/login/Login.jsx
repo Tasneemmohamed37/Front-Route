@@ -1,12 +1,14 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import * as Yup from "yup";
 import { useFormik } from "formik";
 import axios from "axios";
 import { Navigate, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
+import { userContext } from "../../../context/User.Context";
 
 export default function Login() {
 
+  let {token, setToken} = useContext(userContext);
   const passwordRegex = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/;
   const [backEndLogInErrorMsg, setBackEndLogInErrorMsg] = useState(null);
   const navigate = useNavigate();
@@ -38,10 +40,12 @@ export default function Login() {
     try{
       const {data} = await axios.post('https://ecommerce.routemisr.com/api/v1/auth/signin',values);
       toast.dismiss(loadingID);
-        console.log(data); //todo save token in local storage 
+        console.log(data);  
         toast.success('LoggedIn Successfully');
         setTimeout(()=>{
             if(data.message == 'success'){
+              localStorage.setItem('token',data.token)
+              setToken(data.token)
               navigate('/');
             }
         },1000);

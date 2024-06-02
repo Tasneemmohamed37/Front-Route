@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Navigate } from 'react-router-dom';
+import { userContext } from '../../context/User.Context';
 
 export default function AuthGard({ children }) {
-    let user = true;
-        if (user){
+    const {token} = useContext(userContext);
+        if (token){
             return children 
         }
         else{

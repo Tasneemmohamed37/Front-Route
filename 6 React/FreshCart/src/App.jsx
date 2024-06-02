@@ -8,6 +8,7 @@ import NotFound from "./pages/notFound/NotFound"
 import { Toaster } from "react-hot-toast";
 import AuthGard from "./components/authGard/AuthGard";
 import AuthLayout from "./components/Layouts/authLayout/AuthLayout";
+import UserProvider from "./context/User.Context";
 
 function App() {
 
@@ -34,8 +35,10 @@ function App() {
   
   return (
     <>
+    <UserProvider>
     <RouterProvider router={routes}></RouterProvider>
     <Toaster/>
+    </UserProvider>
     </>
   )
 }
