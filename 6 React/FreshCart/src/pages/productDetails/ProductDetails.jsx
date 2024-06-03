@@ -1,11 +1,15 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import { useParams } from 'react-router-dom';
 import Loading from '../../components/loading/Loading';
 import ReactImageGallery from 'react-image-gallery';
+import { cartContext } from '../../context/Cart.Context'
+
 
 
 export default function ProductDetails() {
+    const {addToCart} = useContext(cartContext);
+
     const params = useParams(); 
 
     const [product, setProduct] = useState(null)
@@ -28,9 +32,9 @@ export default function ProductDetails() {
     
     return (
         <>
-        {product ?<div className='grid grid-cols-12  gap-8 shadow-sm'>
+        {product ?<div className='grid grid-cols-12  gap-8 shadow-sm my-5'>
             <div className="img col-span-12  md:col-span-4">
-                <ReactImageGallery items={imageItems} showNav={false}/>
+                <ReactImageGallery items={imageItems} showNav={false} />
             </div>
             <div className="details col-span-12  md:col-span-8">
                 <h2 className='text-2xl font-semibold'>{product.title}</h2>
@@ -45,7 +49,7 @@ export default function ProductDetails() {
                     </div>
                 </div>
                 </div>
-                <button className='w-full btn-primary'>+ add to cart</button>
+                <button className='w-full btn-primary' onClick={()=>{addToCart(product.id)}}>+ add to cart</button>
             </div>
         </div>
         : <Loading/> }

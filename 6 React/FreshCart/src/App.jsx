@@ -11,38 +11,44 @@ import AuthLayout from "./components/Layouts/authLayout/AuthLayout";
 import UserProvider from "./context/User.Context";
 import ProductDetails from "./pages/productDetails/ProductDetails";
 import Cart from "./pages/cart/Cart";
+import Products from "./pages/products/Products";
+import CartProvider from "./context/Cart.Context";
 
 function App() {
 
-  
   const routes = createBrowserRouter([
-    {path: "/", element:
-      <AuthGard>
-        <MainLayout />
-      </AuthGard>, 
+    {
+      path: "/", element:
+        <AuthGard>
+          <MainLayout />
+        </AuthGard>,
       children: [
-      {index: true, element: <Home />},
-      {path:"home", element: <Home />},
-      {path:"cart", element: <Cart />},
-      {path:"products/:id", element: <ProductDetails />},
-      { path: "*", element: <NotFound /> },
-    ]
+        { index: true, element: <Home /> },
+        { path: "home", element: <Home /> },
+        { path: "cart", element: <Cart /> },
+        { path: "products", element: <Products /> },
+        { path: "products/:id", element: <ProductDetails /> },
+        { path: "*", element: <NotFound /> },
+      ]
     },
-    {path: "auth", element:
-        <AuthLayout />, 
+    {
+      path: "auth", element:
+        <AuthLayout />,
       children: [
-      { path: "login", element: <Login /> },
-      { path: "signUp", element: <SignUp /> }
-    ]
+        { path: "login", element: <Login /> },
+        { path: "signUp", element: <SignUp /> }
+      ]
     },
   ]);
-  
+
   return (
     <>
-    <UserProvider>
-    <RouterProvider router={routes}></RouterProvider>
-    <Toaster/>
-    </UserProvider>
+      <UserProvider>
+        <CartProvider>
+          <RouterProvider router={routes}></RouterProvider>
+          <Toaster />
+        </CartProvider>
+      </UserProvider>
     </>
   )
 }

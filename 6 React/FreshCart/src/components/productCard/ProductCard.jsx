@@ -1,21 +1,23 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { NavLink } from 'react-router-dom'
+import { cartContext } from '../../context/Cart.Context'
 
 export default function ProductCard({product}) {
+    const {addToCart} = useContext(cartContext);
     return (
-        <NavLink to={`/products/${product._id}`} className='col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 xl:col-span-2 rounded-md shadow-md '>
+        <div className='col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-3 xl:col-span-2 rounded-md shadow-md '>
             <div className='relative overflow-hidden'>
                 <img src={product.imageCover} alt="" className='w-full rounded-md'/>
                 <div className='overlay bg-black bg-opacity-15 absolute left-0 top-0 opacity-0 hover:opacity-100 transition-opacity duration-300  w-full h-full flex gap-2 justify-center items-center text-sm'>
                     <div className='w-9 h-9 bg-mainColor text-white hover:scale-110 hover:rotate-6 transition-transform duration-300 rounded-full flex justify-center items-center cursor-pointer'>
                         <i className='fa-solid fa-heart'></i>
                     </div>
-                    <div className='w-9 h-9 bg-mainColor text-white hover:scale-110 hover:rotate-6 transition-transform duration-300 rounded-full flex justify-center items-center cursor-pointer'>
+                    <div onClick={()=>{addToCart(product.id)}} className='w-9 h-9 bg-mainColor text-white hover:scale-110 hover:rotate-6 transition-transform duration-300 rounded-full flex justify-center items-center cursor-pointer'>
                         <i className='fa-solid fa-cart-shopping'></i>
                     </div>
-                    <div className='w-9 h-9 bg-mainColor text-white hover:scale-110 hover:rotate-6 transition-transform duration-300 rounded-full flex justify-center items-center'>
+                    <NavLink to={`/products/${product._id}`} className='w-9 h-9 bg-mainColor text-white hover:scale-110 hover:rotate-6 transition-transform duration-300 rounded-full flex justify-center items-center'>
                         <i className='fa-solid fa-eye'></i>
-                    </div>
+                    </NavLink>
                 </div>
             </div>
             <div className='p-4'>
@@ -29,6 +31,6 @@ export default function ProductCard({product}) {
                     </div>
                 </div>
             </div>
-        </NavLink>
+        </div>
     )
 }
