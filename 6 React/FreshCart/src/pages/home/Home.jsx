@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import ProductCard from '../../components/productCard/ProductCard'
 import axios from 'axios';
-import toast from 'react-hot-toast';
 import Loading from '../../components/loading/Loading';
 import HomeSlider from '../../components/homeSider/HomeSlider';
 import CategoriesSlider from '../../components/categoriesSlider/CategoriesSlider';

@@ -9,6 +9,8 @@ import { Toaster } from "react-hot-toast";
 import AuthGard from "./components/authGard/AuthGard";
 import AuthLayout from "./components/Layouts/authLayout/AuthLayout";
 import UserProvider from "./context/User.Context";
+import ProductDetails from "./pages/productDetails/ProductDetails";
+import Cart from "./pages/cart/Cart";
 
 function App() {
 
@@ -21,6 +23,8 @@ function App() {
       children: [
       {index: true, element: <Home />},
       {path:"home", element: <Home />},
+      {path:"cart", element: <Cart />},
+      {path:"products/:id", element: <ProductDetails />},
       { path: "*", element: <NotFound /> },
     ]
     },

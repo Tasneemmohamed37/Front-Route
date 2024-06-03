@@ -15,7 +15,7 @@ export default function Navbar() {
                                 <img src={logo} alt="fresh card logo" />
                             </Link>
                         </h1>
-                        {token ? <ul className="flex gap-3">
+                        {token ? <ul className="flex gap-5">
                             <li>
                                 <NavLink
                                     to="/"
