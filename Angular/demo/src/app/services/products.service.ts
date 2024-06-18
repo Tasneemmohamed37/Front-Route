@@ -1,8 +1,10 @@
+import { APIResponseVM } from './../view models/apiresponse-vm';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, catchError, retry, throwError } from 'rxjs';
 import { IProduct } from '../models/iproduct';
 import { environment } from './../../environments/environment';
+import { GenericApiHandlerService } from './generic-api-handler.service';
 
 @Injectable({
   providedIn: 'root'
@@ -22,6 +24,19 @@ export class ProductsService {
     };
   }
 
+  // ----------------------- [ in case use generic API handler ]
+  // constructor(private genericAPIService:GenericApiHandlerService) 
+  // {
+    
+  // }
+  
+    // getAllProducts():Observable<IProduct[]>
+  // {
+  //   return this.genericAPIService.GetAll(`products`)
+  //   .pipe(
+  //     map((APIResponseVM:APIResponseVM)=>{return APIResponseVM.data})
+  //   );
+  // }
 
   getAllProducts():Observable<IProduct[]>
   {
@@ -31,6 +46,8 @@ export class ProductsService {
       catchError(this.handleError)
     );
   }
+
+
 
   getProductsByCategoryId(catID:number):Observable<IProduct[]>
   {

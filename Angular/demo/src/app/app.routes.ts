@@ -8,6 +8,7 @@ import { MainLayoutComponent } from './components/main-layout/main-layout.compon
 import { ProductComponent } from './components/order/product/product.component';
 import { authGuard } from './gaurds/auth.guard';
 import { ProductFormComponent } from './components/order/product-form/product-form.component';
+import { RegisterComponent } from './components/register/register.component';
 
 
 export const routes: Routes = [
@@ -20,6 +21,7 @@ export const routes: Routes = [
         {path: 'order', component: OrderMasterComponent, canActivate:[authGuard]},
     ]},
     {path: 'login', component: LoginComponent},
+    {path: 'register', component: RegisterComponent},
     {path: 'logout', component: LoginComponent},
     {path:'**', component:NotFoundComponent} // wild card path
 ];
