@@ -1,5 +1,6 @@
 import { AbstractControl, ValidationErrors, ValidatorFn } from '@angular/forms';
 
+// high order func which return another func 'ValidatorFn'
 export function existEmailValidator(existEmails: string[]): ValidatorFn {
     return (control: AbstractControl): ValidationErrors | null => {
     let emailVal: string = control.value;
